@@ -1,8 +1,19 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../Assets/image/20221123_223210.png'
+import { AuthContext } from '../../AuthProvider/Auth';
 
 const Navbar = () => {
+
+     const {user, logOut} = useContext(AuthContext);
+
+     const handleLogOut = () => {
+          logOut()
+               .then()
+               .catch()
+
+     }
 
      const menuItem = <>
           <li><Link to="/home">Home</Link></li>
@@ -16,7 +27,7 @@ const Navbar = () => {
      </>
      return (
 
-          <div className="navbar bg-indigo-400">
+          <div className="navbar bg-indigo-200">
                
                     <div className="navbar-start md:ml-10">
                          <div className="dropdown">
@@ -35,21 +46,19 @@ const Navbar = () => {
                          </ul>
                     </div>
                     <div className="navbar-end">
-                         <div className="dropdown dropdown-end mr-10 mr-0">
-                              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                   <div className="w-10 rounded-full">
-                                        <img src="https://placeimg.com/80/80/people" alt='' />
+                         <div className="dropdown dropdown-end md:mr-10 mr-0">
+                              <label tabIndex={0} className="btn btn-ghost w-16  btn-circle avatar">
+                                   <div className="w-20 rounded-full">
+                                        {
+                                             user?.uid ? <img src={user?.photoURL} alt='' /> :<img src='https://i.pinimg.com/736x/c9/e3/e8/c9e3e810a8066b885ca4e882460785fa.jpg' alt='' />
+                                        }
                                    </div>
                               </label>
-                              <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                   <li>
-                                        <a href=' ' className="justify-between">
-                                             Profile
-                                             <span className="badge">New</span>
-                                        </a>
-                                   </li>
-                                   <li><a>Settings</a></li>
-                                   <li><a>Logout</a></li>
+                              <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 text-center p-2 shadow bg-base-100 rounded-box w-60">
+                                   
+                                   <li>{user?.uid ?   <span>{user?.displayName}</span>  : ' ' }</li>
+                                   <li>{user?.uid ?    <span>{user?.email}</span> : ' ' }</li>
+                                    <li>{user?.uid ?    <span onClick={handleLogOut}>Log Out</span> : <span><Link to='login'>Log In</Link></span> }</li>
                               </ul>
                          </div>
                     </div>

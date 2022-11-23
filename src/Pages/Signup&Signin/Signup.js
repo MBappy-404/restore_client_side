@@ -1,47 +1,60 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../App.css'
+import { AuthContext } from '../../AuthProvider/Auth';
 
 const Signup = () => {
      const { register, formState: { errors }, handleSubmit } = useForm();
+     const { createUser, updateUser } = useContext(AuthContext);
+     const navigate = useNavigate();
 
      const handleSignup = data => {
           console.log(data);
 
-          // createUser(data.email, data.password)
-          //      .then(result => {
-          //           const user = result.user;
-          //           console.log(user);
-          //           toast.success('Successfully toasted!')
-          //           const userInfo = {
+          createUser(data.email, data.password)
+               .then(result => {
+                    const user = result.user;
+                    console.log(user);
+                    const userInfo = {
 
-          //                displayName: data.name
-          //           }
-          //           updateUser(userInfo)
-          //                .then(()=>{
-          //                     saveUser(data.name, data.email, data.password)
-          //                })
+                         displayName: data.name
+                    }
+                    updateUser(userInfo)
+                         .then(()=>{
+                              saveUser(data.name, data.email, data.password)
+                              navigate('/')
+                         })
 
-          //                .catch(err => console.log(err))
-          //      })
-          //      .then(err => console.log(err))
+                         .catch(err => console.log(err))
+               })
+               .then(err => console.log(err))
      }
 
-     const handleGoogleSignup = () => {
 
-          // googleProvider(provider)
-          // .then(result =>{
-          //      const user = result.user;
-          //      console.log(user);
-          //      navigate('/')
-          // })
-          // .catch(err => {
-          //      console.log(err.message);
 
-          // })
+     const saveUser = (name, email, password) =>{
+          
+          const user = {name, email,password };
+
+          fetch('http://localhost:5000/users', {
+               method: 'POST',
+               headers: {
+                    'content-type':'application/json'
+               },
+               body: JSON.stringify(user)
+          })
+          .then(res => res.json())
+          .then(data => {
+               // console.log(data);
+               // setCreateUserEmail(email)
+               navigate('/')
+               
+               
+             
+          })
+
      }
-
 
      return (
          
@@ -93,9 +106,9 @@ const Signup = () => {
                                         </div>
                                         {/* password  */}
                                         <div className="flex -mx-3">
-                                             <div className="w-full px-3 mb-12">
+                                             <div className="w-full px-3 mb-8">
                                                   <label for="" className="text-xs font-semibold px-1">Password</label>
-                                                  <div className="flex">
+                                                  <div className="flex mb-2">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
                                                        <input type="password"
                                                             {...register("password", {
@@ -106,13 +119,12 @@ const Signup = () => {
                                                             className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Enter Your Password" />
                                                   </div>
                                                   <span className='text-red-600 '> {errors.password && <p role="alert">{errors.password?.message}</p>}</span>
-                                                  <small className='mt-5 flex justify-center text-sm'>Already Have Account <span className='text-indigo-500 ml-3 font-bold'> <Link to='/login'>Log In</Link> </span> </small>
+                                                  <small className=' ml-2 text-sm'>Already have an account <span className='text-indigo-500 link ml-2 font-bold'> <Link to='/login'>Log In</Link> </span> </small>
                                              </div>
                                         </div>
                                         {/* submit button  */}
-                                        <div className="flex -mx-3">
+                                        <div className="flex">
                                              <div className="w-full px-3 mb-5">
-                                                 
                                                   <input className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold" value="Sign Up" type="submit" />
                                              </div>
                                         </div>
