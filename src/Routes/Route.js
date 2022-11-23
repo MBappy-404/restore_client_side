@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Blog from "../Pages/Blog/Blog";
 import Home from "../Pages/Home/Home/Home";
+import Login from "../Pages/Signup&Signin/Login";
+import Signup from "../Pages/Signup&Signin/Signup";
 
  
 
@@ -23,6 +25,14 @@ import Home from "../Pages/Home/Home/Home";
                          path: '/blog',
                          element: <Blog></Blog>
                     },
+                    {
+                         path: '/signup',
+                         element: <Signup></Signup>
+                    },
+                    {
+                         path: '/login',
+                         element: <Login></Login>
+                    }
                ]
 
           }
