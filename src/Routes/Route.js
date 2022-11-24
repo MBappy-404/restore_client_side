@@ -42,8 +42,8 @@ import Signup from "../Pages/Signup&Signin/Signup";
                          element: <Login></Login>
                     },
                     {
-                         path:'/category/:category_id',
-                         loader: ({params}) => fetch(`http://localhost:5000/category/${params.category_id}`),
+                         path:'/category/:name',
+                         loader: ({params}) => fetch(`http://localhost:5000/category/${params.name}`),
                          element:<Products></Products>
                     }
                ]

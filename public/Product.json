@@ -1,162 +1,132 @@
-[
-     {
-          "category_Name": "MacBook",
-          "category_id": "01",
-          "product": [
-               {
-                    "name": "MacBook Air M2",
-                    "product_id": "01",
-                    "logo": "https://www.cnet.com/a/img/resize/aba646bbfefdaae2a6aed6d516512f33e3b3a0c9/hub/2022/07/12/995173ef-de01-45be-a714-c5d581f4bd5c/macbook-air-m2-2022-2.jpg?auto=webp&width=1200",
-                    "description": "",
-                    "location": "Rajshahi",
-                    "resale_rice": "$290",
-                    "original_price": "$600",
-                    "used": "1 Year",
-                    "posted": "3 days ago",
-                    "seller_name": "Shakil Hasan ",
-                    "verify": "true"
-               },
-               {
-                    "name": "MacBook Pro 13",
-                    "product_id": "02",
-                    "logo": "https://s.yimg.com/ny/api/res/1.2/VeUh9tBNuoToJH1mNNsOKg--/YXBwaWQ9aGlnaGxhbmRlcjtoPTY2Ng--/https://s.yimg.com/os/creatr-uploaded-images/2021-10/fc26a961-350a-11ec-aeed-d392d87d8e2c",
-                    "description": "",
-                    "location": "Dhaka",
-                    "resale_rice": "$350",
-                    "original_price": "$800",
-                    "used": "10 months",
-                    "posted": "2 days ago",
-                    "seller_name": "Jahid Khan",
-                    "verify": "false"
-               }
-          ]
-     },
-     {
-          "category_Name": "Chromebook",
-          "category_id": "02",
-          "product": [
-               {
-                    "name": "Acer Chromebook Spin 713",
-                    "product_id": "01",
-                    "logo": "https://s.yimg.com/os/creatr-uploaded-images/2021-06/28c55b10-cd37-11eb-9c7d-c457511f17df",
-                    "description": "",
-                    "location": "Jossor",
-                    "resale_rice": "$450",
-                    "original_price": "$900",
-                    "used": " 8 months",
-                    "posted": "5 days ago",
-                    "seller_name": "Towkir Ahmed",
-                    "verify": "true"
-               },
-               {
-                    "name": "Lenovo C13 Yoga Chromebook",
-                    "product_id": "02",
-                    "logo": "https://reviewed-com-res.cloudinary.com/image/fetch/s--yqOrv02B--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,h_668,q_auto,w_1187/https://reviewed-production.s3.amazonaws.com/1616607058000/3.png",
-                    "description": "",
-                    "location": "Shylet",
-                    "resale_rice": "$400",
-                    "original_price": "$700",
-                    "used": "1.3 Years",
-                    "posted": "2 days ago",
-                    "seller_name": "Shakil Hasan ",
-                    "verify": "true"
-               }
-          ]
-     },
-     {
-          "category_Name": "Netbook",
-          "category_id": "03",
-          "product": [
-               {
-                    "name": "ASUS X101CH Netbook",
-                    "product_id": "01",
-                    "logo": "https://www.digitaltrends.com/wp-content/uploads/2021/08/dell-xps-15-oled-2021-laptop.jpg?fit=720%2C720&p=1",
-                    "description": "",
-                    "location": "Dhaka",
-                    "resale_rice": "$600",
-                    "original_price": "$1000",
-                    "used": "11 months",
-                    "posted": " 4 days ago",
-                    "seller_name": "Md.Nasim",
-                    "verify": "false"
-               },
-               {
-                    "name": "ASUS Notebook NP03",
-                    "product_id": "02",
-                    "logo": "https://cdn.mos.cms.futurecdn.net/4LqrcLqoCHBDMkswpZ2uah.jpg",
-                    "description": "",
-                    "location": "Borisal",
-                    "resale_rice": "$500",
-                    "original_price": "$800",
-                    "used": "1.3Years",
-                    "posted": " 3 days ago",
-                    "seller_name": "Jubayer Khan",
-                    "verify": "true"
-               }
-          ]
-     },
-     {
-          "category_Name": "Ultrabook",
-          "category_id": "04",
-          "product": [
-               {
-                    "name": "Huawei Ultrabook  X Pro",
-                    "product_id": "01",
-                    "logo": "https://www.cnet.com/a/img/resize/c39a6badec8b35f5d5102166da5bcff79329946f/hub/2018/02/22/cbb5bd71-bee6-4340-af78-f100478b5e80/huawei-matebook-x-pro-5556.jpg?auto=webp&fit=crop&height=675&width=1200",
-                    "description": "",
-                    "location": "Kumilla",
-                    "resale_rice": "$750",
-                    "original_price": "$400",
-                    "used": "1.4 years",
-                    "posted": "4 days ago",
-                    "seller_name": "Tamim Hoque",
-                    "verify": "true"
-               },
-               {
-                    "name": "Dell Ultrabook  XPS 13",
-                    "product_id": "01",
-                    "logo": "https://www.trustedreviews.com/wp-content/uploads/sites/54/2021/01/Dell-XPS-13-2020-Late-21-scaled-e1610727800900.jpg",
-                    "description": "",
-                    "location": "Mirpur",
-                    "resale_rice": "$650",
-                    "original_price": "$900",
-                    "used": "10 months",
-                    "posted": "3 days ago",
-                    "seller_name": "Jamil Khan",
-                    "verify": "false"
-               }
-          ]
-     },
-     {
-          "category_Name": "Ultraportable",
-          "category_id": "05",
-          "product": [
-               {
-                    "name": "HP Pavilion Plus 14",
-                    "product_id": "01",
-                    "logo": "https://i.pcmag.com/imagery/reviews/065rv6nxdAEcCzvE3Qb8T3v-2.fit_lim.size_1050x.jpg",
-                    "description": "",
-                    "location": "Rajshahi",
-                    "resale_rice": "$499",
-                    "original_price": "$799",
-                    "used": "1 year",
-                    "posted": "3 days ago",
-                    "seller_name": "Atik Hasan ",
-                    "verify": "false"
-               },
-               {
-                    "name": "LG Gram 17 (2022)",
-                    "product_id": "01",
-                    "logo": "https://cdn.vox-cdn.com/thumbor/mb4-zG0FjjsMdbS3jnX_5Jlhv4s=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/22411713/cfaulkner_20210326_4491_0006.jpg",
-                    "description": "",
-                    "location": "Khulna",
-                    "resale_rice": "$999",
-                    "original_price": "$1699",
-                    "used": " 8 months",
-                    "posted": "1 days ago",
-                    "seller_name": "Muhammad Bappy ",
-                    "verify": "true"
-               }
-          ]
-     }
-]
+     [
+          {
+               "name": "MacBook Air M2",
+               "Category_Name": "MacBook",
+               "logo": "https://www.cnet.com/a/img/resize/aba646bbfefdaae2a6aed6d516512f33e3b3a0c9/hub/2022/07/12/995173ef-de01-45be-a714-c5d581f4bd5c/macbook-air-m2-2022-2.jpg?auto=webp&width=1200",
+               "description": "Yes- it is a highly competitive price for a laptop, which is intended for minimal usage, such as schoolwork or business travelling. My laptop - which dates from the days when there was the convenience of large hard drives, a DVD drive, and multiple ports - could not operate at high WiFi speed, and I feared it would soon be inoperable.",
+               "location": "Rajshahi",
+               "resale_rice": "$290",
+               "original_price": "$600",
+               "used": "1 Year",
+               "posted": "3 days ago",
+               "seller_name": "Shakil Hasan ",
+               "verify": "true"
+          },
+          {
+               "name": "MacBook Pro 13",
+               "Category_Name": "MacBook",
+               "logo": "https://s.yimg.com/ny/api/res/1.2/VeUh9tBNuoToJH1mNNsOKg--/YXBwaWQ9aGlnaGxhbmRlcjtoPTY2Ng--/https://s.yimg.com/os/creatr-uploaded-images/2021-10/fc26a961-350a-11ec-aeed-d392d87d8e2c",
+               "description": "I personally have what was the best selling laptop on Amazon in 2017—and well worth it. But in 2022, it is still a dual-core i3–7100U. It gets by. I installed a 128GB NVMe drive and added 4GB of DDR4–2400, so it does get by pretty well",
+               "location": "Dhaka",
+               "resale_rice": "$350",
+               "original_price": "$800",
+               "used": "10 months",
+               "posted": "2 days ago",
+               "seller_name": "Jahid Khan",
+               "verify": "false"
+          },
+          {
+               "name": "Acer Chromebook Spin 713",
+               "Category_Name": "Chromebook",
+               "logo": "https://s.yimg.com/os/creatr-uploaded-images/2021-06/28c55b10-cd37-11eb-9c7d-c457511f17df",
+               "description": "Unfortunately a lot of other laptops from 2017 are just garbage. You can’t add an M.2 drive and the screens (shockingly) are often 1366x768. I kid you not. Still puttin’ that trash on Kaby Lake laptops. Acer at least had the decency to go Full HD for most of its 2017 product line.If you go used, I would strongly recommend Ryzen if you can find them. 4800H, 5500U, 5700U are the three I’d look for. These were made in 2020 and 2021 and were not that expensive to begin with",
+               "location": "Jossor",
+               "resale_rice": "$450",
+               "original_price": "$900",
+               "used": " 8 months",
+               "posted": "5 days ago",
+               "seller_name": "Towkir Ahmed",
+               "verify": "true"
+          },
+          {
+               "name": "Lenovo C13 Yoga Chromebook",
+               "Category_Name": "Chromebook",
+               "logo": "https://reviewed-com-res.cloudinary.com/image/fetch/s--yqOrv02B--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,h_668,q_auto,w_1187/https://reviewed-production.s3.amazonaws.com/1616607058000/3.png",
+               "description": "The 8GB of DDR4 is probably single-channel so if you want to play GTA at 60Hz, you may need to add another 8GB SODIMM to get dual channel. Six cores and a Vega GPU do not add up to a gaming laptop, but you can still manage to do some gaming I doubt the system allows for more than one drive so 256GB might be all you get. It’s enough for an office PC and a few games.",
+               "location": "Shylet",
+               "resale_rice": "$400",
+               "original_price": "$700",
+               "used": "1.3 Years",
+               "posted": "2 days ago",
+               "seller_name": "Shakil Hasan ",
+               "verify": "true"
+          },
+          {
+               "name": "ASUS X101CH Netbook",
+               "Category_Name": "Netbook",
+               "logo": "https://www.digitaltrends.com/wp-content/uploads/2021/08/dell-xps-15-oled-2021-laptop.jpg?fit=720%2C720&p=1",
+               "description": "I won't suggest buying an old device, rather, a refurbished laptop from a trusted platform would be a good choice if you want to save some money. But why buy an old laptop when you can buy a new budget-friendly laptop. For instance, HP Chromebook 11a-na0006MU PC is powered by MediaTek Kompanio 500 processor, 4 GB RAM, 64 eMMC and MediaTek Integrated Graphics. The laptop runs on Chrome OS and has an 11.6-inch HD (1366 x 768) IPS screen. The HP Chromebook is priced at INR 23,499. And if you are looking for a Windows laptop then HP laptops start at INR 32k equipped with the latest CPU",
+               "location": "Dhaka",
+               "resale_rice": "$600",
+               "original_price": "$1000",
+               "used": "11 months",
+               "posted": " 4 days ago",
+               "seller_name": "Md.Nasim",
+               "verify": "false"
+          },
+          {
+               "name": "ASUS Notebook NP03",
+               "Category_Name": "Netbook",
+               "logo": "https://cdn.mos.cms.futurecdn.net/4LqrcLqoCHBDMkswpZ2uah.jpg",
+               "description": "Besides the processor and graphics card, the working memory (RAM) and the data storage used also contribute significantly to the operating speed of the laptop. The RAM should be at least 4 GB, in order to provide sufficient temporary storage to the processor for its operations. If the RAM is insufficient, it has to be swapped to the slower mass storage, which slows down the system noticeabl",
+               "location": "Borisal",
+               "resale_rice": "$500",
+               "original_price": "$800",
+               "used": "1.3Years",
+               "posted": " 3 days ago",
+               "seller_name": "Jubayer Khan",
+               "verify": "true"
+          },
+          {
+               "name": "Huawei Ultrabook  X Pro",
+               "Category_Name": "Ultrabook",
+               "logo": "https://www.cnet.com/a/img/resize/c39a6badec8b35f5d5102166da5bcff79329946f/hub/2018/02/22/cbb5bd71-bee6-4340-af78-f100478b5e80/huawei-matebook-x-pro-5556.jpg?auto=webp&fit=crop&height=675&width=1200",
+               "description": "The first one I purchased was great -- worked well, no problems at all, very good value. The second one has had nothing but problems. Used in office, and connected via ethernet cable, it STILL drops the internet connection multiple times a day and has to be restarted. Changed cables, adaptors, with the working one and still no help. The first one was a 5 star, the second one is 2 star if you rely heavily on the internet.",
+               "location": "Kumilla",
+               "resale_rice": "$750",
+               "original_price": "$400",
+               "used": "1.4 years",
+               "posted": "4 days ago",
+               "seller_name": "Tamim Hoque",
+               "verify": "true"
+          },
+          {
+               "name": "Dell Ultrabook  XPS 13",
+               "Category_Name": "Ultrabook",
+               "logo": "https://www.trustedreviews.com/wp-content/uploads/sites/54/2021/01/Dell-XPS-13-2020-Late-21-scaled-e1610727800900.jpg",
+               "description": "It’s really good for the price I been using it for a few weeks. You pay what you get but I use it for school only it’s fast, it stays charged for a long time it’s lightweight. It’s way better then my last laptop so I’m happy with it. 6/10 only because I’m still learning it.",
+               "location": "Mirpur",
+               "resale_rice": "$650",
+               "original_price": "$900",
+               "used": "10 months",
+               "posted": "3 days ago",
+               "seller_name": "Jamil Khan",
+               "verify": "false"
+          },
+          {
+               "name": "HP Pavilion Plus 14",
+               "Category_Name": "Ultraportable",
+               "logo": "https://i.pcmag.com/imagery/reviews/065rv6nxdAEcCzvE3Qb8T3v-2.fit_lim.size_1050x.jpg",
+               "description": "2008 netbook quality in a 2021 package. Needed a computer to take proctored tests online during pandemic. This worked. Not sure how much longer it will continue working. It's VERY slow and keeps trying to install bloatware. No ventilation. questionable hardware and drivers. Not sure if there is better out there for the price.",
+               "location": "Rajshahi",
+               "resale_rice": "$499",
+               "original_price": "$799",
+               "used": "1 year",
+               "posted": "3 days ago",
+               "seller_name": "Atik Hasan ",
+               "verify": "false"
+          },
+          {
+               "name": "LG Gram 17 (2022)",
+               "Category_Name": "Ultraportable",
+               "logo": "https://cdn.vox-cdn.com/thumbor/mb4-zG0FjjsMdbS3jnX_5Jlhv4s=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/22411713/cfaulkner_20210326_4491_0006.jpg",
+               "description": "This is an excellent product for the value. Note this product is not touch screen and it looks very similar to a MacBook Air. Just a thousand dollars cheaper. I started doing school work on this pc and have no troubles. Every web pages loads in a flash. Just to a little to do the original updates when I took out of the box for the first time. Just plug it in for two hours and you’ll be good to go.",
+               "location": "Khulna",
+               "resale_rice": "$999",
+               "original_price": "$1699",
+               "used": " 8 months",
+               "posted": "1 days ago",
+               "seller_name": "Muhammad Bappy ",
+               "verify": "true"
+          }
+     ]
