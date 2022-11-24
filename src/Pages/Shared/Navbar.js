@@ -57,8 +57,8 @@ const Navbar = () => {
                               <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 text-center p-2 shadow bg-base-100 rounded-box w-60">
                                    
                                    <li>{user?.uid ?   <span>{user?.displayName}</span>  : ' ' }</li>
-                                   <li>{user?.uid ?    <span>{user?.email}</span> : ' ' }</li>
-                                    <li>{user?.uid ?    <span onClick={handleLogOut}>Log Out</span> : <span><Link to='login'>Log In</Link></span> }</li>
+                                   <li>{user?.uid ?   <span>{user?.email}</span> : ' ' }</li>
+                                   <li>{user?.uid ?   <span onClick={handleLogOut}>Log Out</span> : <span><Link to='login'>Log In</Link></span> }</li>
                               </ul>
                          </div>
                     </div>

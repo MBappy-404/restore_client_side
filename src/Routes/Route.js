@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Blog from "../Pages/Blog/Blog";
+import Products from "../Pages/Home/Category/Products";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Signup&Signin/Login";
 import Signup from "../Pages/Signup&Signin/Signup";
@@ -32,6 +33,10 @@ import Signup from "../Pages/Signup&Signin/Signup";
                     {
                          path: '/login',
                          element: <Login></Login>
+                    },
+                    {
+                         path:'/category/:category_id',
+                         element:<Products></Products>
                     }
                ]
 

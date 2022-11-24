@@ -10,7 +10,7 @@ const Signup = () => {
      const navigate = useNavigate();
 
      const handleSignup = data => {
-          console.log(data);
+          console.log(data.type);
 
           createUser(data.email, data.password)
                .then(result => {
@@ -21,7 +21,7 @@ const Signup = () => {
                          displayName: data.name
                     }
                     updateUser(userInfo)
-                         .then(()=>{
+                         .then(() => {
                               saveUser(data.name, data.email, data.password)
                               navigate('/')
                          })
@@ -33,31 +33,31 @@ const Signup = () => {
 
 
 
-     const saveUser = (name, email, password) =>{
-          
-          const user = {name, email,password };
+     const saveUser = (name, email, password) => {
+
+          const user = { name, email, password };
 
           fetch('http://localhost:5000/users', {
                method: 'POST',
                headers: {
-                    'content-type':'application/json'
+                    'content-type': 'application/json'
                },
                body: JSON.stringify(user)
           })
-          .then(res => res.json())
-          .then(data => {
-               // console.log(data);
-               // setCreateUserEmail(email)
-               navigate('/')
-               
-               
-             
-          })
+               .then(res => res.json())
+               .then(data => {
+                    // console.log(data);
+                    // setCreateUserEmail(email)
+                    navigate('/')
+
+
+
+               })
 
      }
 
      return (
-         
+
           <div>
                <div className="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-10 py-20">
                     <div className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style={{ maxWidth: '1000px' }}>
@@ -65,7 +65,7 @@ const Signup = () => {
 
                               {/* left image svg  */}
                               <div className="hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
-                                <img src='https://nilgiricollege.ac.in/app/app-files/images/userlog.png'  className='w-full mt-16' alt="" />
+                                   <img src='https://nilgiricollege.ac.in/app/app-files/images/userlog.png' className='w-full mt-16' alt="" />
                               </div>
                               <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
                                    <div className="text-center mb-10">
@@ -77,7 +77,7 @@ const Signup = () => {
                                         {/* name  */}
                                         <div className="flex -mx-3">
                                              <div className="w-full px-3 mb-5">
-                                                  <label for="" className="text-xs font-semibold px-1">First name</label>
+                                                  <label for="" className="text-sm font-semibold px-1">First name</label>
                                                   <div className="flex">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
                                                        <input type="text"
@@ -89,10 +89,30 @@ const Signup = () => {
                                                   <span className='text-red-600 '> {errors.name && <p role="alert">{errors.name?.message}</p>}</span>
                                              </div>
                                         </div>
+                                        {/* select  */}
+                                        <div className="flex -mx-3">
+                                             <div className="w-full px-3 mb-5">
+                                                  <label for="" className="text-sm font-semibold px-1">Select Your Type</label>
+                                                  <div className="flex">
+                                                  <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                                       <select
+                                                            {...register("type", {
+                                                                 required: "type is required"
+                                                            })}
+                                                            className="type  w-full -ml-10  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500">
+                                                            <option disabled selected>Pick your  type</option>
+                                                            <option >Seller</option>
+                                                            <option>Buyer</option>
+                                                           
+                                                       </select>
+                                                  </div>
+                                                  <span className='text-red-600 '> {errors.type && <p role="alert">{errors.type?.message}</p>}</span>
+                                             </div>
+                                        </div>
                                         {/* email  */}
                                         <div className="flex -mx-3">
                                              <div className="w-full px-3 mb-5">
-                                                  <label for="" className="text-xs font-semibold px-1">Email</label>
+                                                  <label for="" className="text-sm font-semibold px-1">Email</label>
                                                   <div className="flex">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
                                                        <input type="email"
@@ -107,7 +127,7 @@ const Signup = () => {
                                         {/* password  */}
                                         <div className="flex -mx-3">
                                              <div className="w-full px-3 mb-8">
-                                                  <label for="" className="text-xs font-semibold px-1">Password</label>
+                                                  <label for="" className="text-sm font-semibold px-1">Password</label>
                                                   <div className="flex mb-2">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
                                                        <input type="password"
