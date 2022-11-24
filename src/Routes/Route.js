@@ -36,6 +36,7 @@ import Signup from "../Pages/Signup&Signin/Signup";
                     },
                     {
                          path:'/category/:category_id',
+                         loader: ({params}) => fetch(`http://localhost:5000/category/${params.category_id}`),
                          element:<Products></Products>
                     }
                ]

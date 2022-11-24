@@ -1,10 +1,12 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
 import Category from '../Category/Category';
 
 const Home = () => {
      return (
           <div>
-               <h1 className="text-5xl text-primary">Hiii bros</h1>
+          
+               <Banner></Banner>
 
                <div>
                     <Category></Category>
