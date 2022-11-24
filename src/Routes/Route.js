@@ -1,6 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../Layout/DashboardLayout";
 import Main from "../Layout/Main";
 import Blog from "../Pages/Blog/Blog";
+import AddProduct from "../Pages/Dashboard/AddProduct";
+import AllBuyer from "../Pages/Dashboard/AllBuyer";
+import AllSeller from "../Pages/Dashboard/AllSeller";
+import MyOrders from "../Pages/Dashboard/MyOrders";
+import MyProduct from "../Pages/Dashboard/MyProduct";
+import ReportedItems from "../Pages/Dashboard/ReportedItems";
 import Products from "../Pages/Home/Category/Products";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Signup&Signin/Login";
@@ -41,6 +48,44 @@ import Signup from "../Pages/Signup&Signin/Signup";
                     }
                ]
 
+          },
+
+          {
+               path: '/dashboard',
+               element:  <DashboardLayout></DashboardLayout>,
+               // errorElement: <ErrorPage></ErrorPage>,
+               children: [
+     
+                    {
+                         path: '/dashboard',
+                         element: <MyOrders></MyOrders>
+                    },
+                    {
+                         path: '/dashboard/addProducts',
+                         element: <AddProduct></AddProduct>
+                    },
+                    {
+                         path: '/dashboard/allBuyers',
+                         element: <AllBuyer></AllBuyer>
+                    },
+                    {
+                         path: '/dashboard/allSellers',
+                         element: <AllSeller></AllSeller>
+                    },
+                    {
+                         path: '/dashboard/myProducts',
+                         element: <MyProduct></MyProduct>
+                    },
+                    {
+                         path: '/dashboard/reportedItems',
+                         element: <ReportedItems></ReportedItems>
+                    },
+                    // {
+                    //      path: '/dashboard/payment/:id',
+                    //      element: <PrivateRoute> <Payment></Payment> </PrivateRoute>,
+                    //      loader: ({params}) => fetch(`http://localhost:5000/booking/${params.id}`)
+                    // }
+               ]
           }
 
      ])

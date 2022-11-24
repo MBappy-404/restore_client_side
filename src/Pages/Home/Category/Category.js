@@ -15,7 +15,7 @@ const Category = () => {
      })
 
      return (
-          <div>
+          <div className='mb-10 mt-10'>
                <h1 className='text-indigo-600 font-bold text-4xl mb-8 text-center'>Laptop Categories</h1>
                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-5 gap-0 m-auto '>
 
