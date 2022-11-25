@@ -29,11 +29,9 @@ const MyOrders = () => {
                                    <th>Product Name</th>
                                    <th>Price </th>
                                    <th>Payment</th>
-
                               </tr>
                          </thead>
                          <tbody>
-
                               {
                                    orders.map((order, i) =>
 
@@ -52,7 +50,6 @@ const MyOrders = () => {
                                         </tr>
                                    )
                               }
-
                          </tbody>
                     </table>
                </div>

@@ -22,8 +22,7 @@ const Signup = () => {
                     }
                     updateUser(userInfo)
                          .then(() => {
-                              saveUser(data.name, data.email, data.password)
-                              navigate('/')
+                              saveUser(data.name, data.email, data.password, data.type)
                          })
 
                          .catch(err => console.log(err))
@@ -33,9 +32,14 @@ const Signup = () => {
 
 
 
-     const saveUser = (name, email, password) => {
+     const saveUser = (name, email,password,type) => {
 
-          const user = { name, email, password };
+          const user = {
+               name,
+               email,
+               password,
+               type:type
+          };
 
           fetch('http://localhost:5000/users', {
                method: 'POST',
@@ -46,8 +50,9 @@ const Signup = () => {
           })
                .then(res => res.json())
                .then(data => {
-                    // console.log(data);
+                    console.log(data);
                     // setCreateUserEmail(email)
+                    
                     navigate('/')
 
 
@@ -55,6 +60,7 @@ const Signup = () => {
                })
 
      }
+
 
      return (
 
@@ -94,15 +100,15 @@ const Signup = () => {
                                              <div className="w-full px-3 mb-5">
                                                   <label for="" className="text-sm font-semibold px-1">Select Your Type</label>
                                                   <div className="flex">
-                                                  <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                                       <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
                                                        <select
                                                             {...register("type", {
                                                                  required: "type is required"
                                                             })}
                                                             className="type  w-full -ml-10  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500">
-                                                            <option disabled selected>Normal user</option>
+                                                            <option disabled selected>Buyer</option>
                                                             <option>Seller</option>
-                                                           
+
                                                        </select>
                                                   </div>
                                                   <span className='text-red-600 '> {errors.type && <p role="alert">{errors.type?.message}</p>}</span>
@@ -155,6 +161,8 @@ const Signup = () => {
           </div>
 
      )
+
+
 };
 
 export default Signup;

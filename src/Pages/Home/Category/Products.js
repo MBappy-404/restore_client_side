@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
@@ -10,7 +9,6 @@ const Products = () => {
     
      const [products, setProducts] = useState(null)
      const product = useLoaderData()
-     console.log(product);
 
     
 

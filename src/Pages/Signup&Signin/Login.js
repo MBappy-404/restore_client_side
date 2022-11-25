@@ -37,7 +37,27 @@ const Login = () => {
                .then(result => {
                     const user = result.user;
                     console.log(user);
-                    navigate('/')
+                    // navigate('/')
+
+                    const userData = {
+                         name:user?.displayName,
+                         email: user?.email,
+                         type:'Buyer'
+                    }
+
+                    fetch('http://localhost:5000/users',{
+                         method: 'POST',
+                         headers:{
+                              'content-type':'application/json',
+                         },
+                         body: JSON.stringify(userData)
+                    })
+                    .then(res => res.json())
+                    .then( data => {
+                         console.log(data);
+                    })
+
+                    
                })
                .catch(err => {
                     console.log(err.message);

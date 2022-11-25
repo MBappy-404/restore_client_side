@@ -52,7 +52,7 @@ const Navbar = () => {
                          <label tabIndex={0} className="btn btn-ghost w-16  btn-circle avatar">
                               <div className="w-20 rounded-full">
                                    {
-                                        user?.uid ? <img src={user?.photoURL} alt='' /> : <img src='https://i.pinimg.com/736x/c9/e3/e8/c9e3e810a8066b885ca4e882460785fa.jpg' alt='' />
+                                        user?.photoURL ? <img src={user?.photoURL} alt='' /> : <img src='https://i.pinimg.com/736x/c9/e3/e8/c9e3e810a8066b885ca4e882460785fa.jpg' alt='' />
                                    }
                               </div>
                          </label>
@@ -60,7 +60,7 @@ const Navbar = () => {
 
                               <li>{user?.uid ? <span>{user?.displayName}</span> : ' '}</li>
                               <li>{user?.uid ? <span>{user?.email}</span> : ' '}</li>
-                              <li>{user?.uid ? <span onClick={handleLogOut}>Log Out</span> : <span><Link to='login'>Log In</Link></span>}</li>
+                              <li>{user?.uid ? <span onClick={handleLogOut}>Log Out</span> : <span><Link to='/login'>Log In</Link></span>}</li>
                          </ul>
                     </div>
                </div>
