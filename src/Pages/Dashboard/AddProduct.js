@@ -36,7 +36,8 @@ const AddProduct = () => {
                seller_name: user?.displayName,
                used: usedTime,
                productCondition,
-               number
+               number,
+               email:user?.email
 
 
           }
