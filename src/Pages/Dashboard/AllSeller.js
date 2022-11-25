@@ -1,8 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/Auth';
 
 const AllSeller = () => {
 
+     const {user} = useContext(AuthContext)
      const { data: users = [], refetch } = useQuery({
           queryKey: ['users'],
           queryFn: async () => {
@@ -29,8 +32,7 @@ const AllSeller = () => {
 
      const handleUpdate = (seller) => {
 
-          fetch(`http://localhost:5000/users/${seller._id}`, {
-
+          fetch(`http://localhost:5000/category/user?email=${seller}`, {
                method:'PUT',
           })
                .then(res => res.json())
@@ -65,11 +67,11 @@ const AllSeller = () => {
                                              <th><p className='ml-3'>{i + 1}</p></th>
                                              <td><p className=' font-medium text-sm '>{seller.name}</p></td>
                                              <td><p className=' font-medium text-sm'>{seller.email}</p></td>
-                                             <td><button onClick={() => handleDeleteUser(seller)} className='btn btn-primary btn-sm ml-2'>Delete</button></td>
+                                             <td><button onClick={() => handleDeleteUser(seller)} className='btn  btn-primary btn-sm ml-4'>Delete</button></td>
                                              <th>
                                                   {seller.verify === 'true' ?
-                                                       <p className='text-sm font-medium text-primary'>VERIFIED</p> :
-                                                       <button onClick={() => handleUpdate(seller)} className='btn btn-sm btn-info'>Verify</button>}
+                                                       <p className='text-sm ml-4 font-medium text-primary'>VERIFIED</p> :
+                                                       <button onClick={()=>handleUpdate(seller.email)} className='btn ml-4 btn-sm btn-info'>Verify</button>}
                                              </th>
                                         </tr>
                                    )

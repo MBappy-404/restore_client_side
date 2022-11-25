@@ -32,6 +32,23 @@ const MyProduct = () => {
 
      }
 
+     const handleAdds = (product) =>{
+
+          fetch(`http://localhost:5000/reported/${product._id}`,{
+               method: 'PUT'
+          })
+          .then(res => res.json())
+          .then(data => {
+               console.log(data);
+               if(data.acknowledged){
+                     
+               }
+               refetch()
+          })
+
+
+     }
+
      return (
           <div>
                <div className="overflow-x-auto">
@@ -56,7 +73,7 @@ const MyProduct = () => {
                                              <td>{product.name}</td>
                                              <td>{product.resale_rice}</td>
                                              <td> <button className='btn btn-primary btn-xs'>Available</button> </td>
-                                             <td><button className='btn btn-success btn-xs'>Turn On</button></td>
+                                             <td><button onClick={() => handleAdds(product)} className='btn btn-success btn-xs'>Turn On</button></td>
                                              <td><button onClick={()=>handleDeleteProduct(product)} className='btn btn-warning btn-xs ml-7'>Delete</button></td>
                                         </tr>
                                    )
