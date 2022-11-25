@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/Auth';
 
 const BookingModal = ({ products,setProducts }) => {
-     const { name, original_price } = products;
+     const { name, original_price,logo } = products;
 
      const { user } = useContext(AuthContext);
 
@@ -22,10 +22,38 @@ const BookingModal = ({ products,setProducts }) => {
           const book = {name,email,product_Name,price,number,location};
           console.log(book);
 
+          const orders = {
+               product_name: product_Name,
+               buyer_name:user?.displayName,
+               email: user?.email,
+               product_price:price,
+               phone: number,
+               logo,
+               location
+          }
+
+          // post database
+          fetch('http://localhost:5000/orders',{
+               method: 'POST',
+               headers: {
+                    'content-type': 'application/json'
+               },
+               body: JSON.stringify(orders)
+          })
+          .then(res => res.json())
+          .then(data => {
+               console.log(data);
+               if(data.acknowledged){
+
+                     setProducts(null)
+               }
+                
+          })
 
 
 
-          // setProducts(null)
+
+        
 
      }
      return (
