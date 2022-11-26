@@ -60,7 +60,7 @@ const AddProduct = () => {
                .then(res => res.json())
                .then(data => {
                     console.log(data);
-                    // navigate('/dashboard/myProducts')
+                    navigate('/dashboard/myProducts')
                })
      }
      return (

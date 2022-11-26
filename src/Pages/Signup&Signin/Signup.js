@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../App.css'
@@ -7,10 +8,11 @@ import { AuthContext } from '../../AuthProvider/Auth';
 const Signup = () => {
      const { register, formState: { errors }, handleSubmit } = useForm();
      const { createUser, updateUser } = useContext(AuthContext);
+     const [ signUpError, setSignupError ] = useState()
      const navigate = useNavigate();
 
      const handleSignup = data => {
-          console.log(data.type);
+     
 
           createUser(data.email, data.password)
                .then(result => {
@@ -27,22 +29,25 @@ const Signup = () => {
 
                          .catch(err => console.log(err))
                })
-               .then(err => console.log(err))
+               .catch(err => {
+                    setSignupError(err.message);
+                    console.log(err.message);
+               })
      }
 
 
 
-     const saveUser = (name, email,password,type) => {
+     const saveUser = (name, email, password, type) => {
 
           const user = {
                name,
                email,
                password,
-               type:type
+               type: type
           };
 
           fetch('http://localhost:5000/users', {
-               method: 'POST',
+               method: 'PUT',
                headers: {
                     'content-type': 'application/json'
                },
@@ -52,7 +57,7 @@ const Signup = () => {
                .then(data => {
                     console.log(data);
                     // setCreateUserEmail(email)
-                    
+
                     navigate('/')
 
 
@@ -151,6 +156,9 @@ const Signup = () => {
                                         <div className="flex">
                                              <div className="w-full px-3 mb-5">
                                                   <input className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold" value="Sign Up" type="submit" />
+                                             </div>
+                                             <div>
+                                                  {signUpError && <p className=' text-center text-red-600'>{signUpError}</p>}
                                              </div>
                                         </div>
                                    </form>

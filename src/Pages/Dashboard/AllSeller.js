@@ -1,11 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { useContext } from 'react';
-import { AuthContext } from '../../AuthProvider/Auth';
 
 const AllSeller = () => {
 
-     const {user} = useContext(AuthContext)
      const { data: users = [], refetch } = useQuery({
           queryKey: ['users'],
           queryFn: async () => {
@@ -30,9 +27,11 @@ const AllSeller = () => {
                })
      }
 
-     const handleUpdate = (seller) => {
+     const handleVerify = (seller) => {
 
-          fetch(`http://localhost:5000/category/user?email=${seller}`, {
+          
+
+          fetch(`http://localhost:5000/category?email=${seller.email}`, {
                method:'PUT',
           })
                .then(res => res.json())
@@ -71,7 +70,7 @@ const AllSeller = () => {
                                              <th>
                                                   {seller.verify === 'true' ?
                                                        <p className='text-sm ml-4 font-medium text-primary'>VERIFIED</p> :
-                                                       <button onClick={()=>handleUpdate(seller.email)} className='btn ml-4 btn-sm btn-info'>Verify</button>}
+                                                       <button onClick={()=>handleVerify(seller)} className='btn ml-4 btn-sm btn-info'>Verify</button>}
                                              </th>
                                         </tr>
                                    )

@@ -1,7 +1,7 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../../App.css'
 import { AuthContext } from '../../AuthProvider/Auth';
 
@@ -11,6 +11,8 @@ const Login = () => {
      const { signIn, googleProvider } = useContext(AuthContext);
      const [loginError, setLoginError] = useState();
      const navigate = useNavigate();
+     const location = useLocation()
+     const from = location.state?.from?.pathname || '/';
 
      const handleLogin = data => {
           setLoginError('')
@@ -37,30 +39,30 @@ const Login = () => {
                .then(result => {
                     const user = result.user;
                     console.log(user);
-                  
+
                     const userData = {
-                         name:user?.displayName,
+                         name: user?.displayName,
                          email: user?.email,
-                         type:'Buyer'
+                         type: 'Buyer'
                     }
 
-                    fetch('http://localhost:5000/users',{
+                    fetch('http://localhost:5000/users', {
                          method: 'PUT',
-                         headers:{
-                              'content-type':'application/json',
+                         headers: {
+                              'content-type': 'application/json',
                          },
                          body: JSON.stringify(userData)
                     })
-                    .then(res => res.json())
-                    .then( data => {
-                         console.log(data);
-                         if(data.acknowledged){
+                         .then(res => res.json())
+                         .then(data => {
+                              console.log(data);
+                              if (data.acknowledged) {
 
-                              navigate('/')
-                         }
-                    })
+                                   navigate('/')
+                              }
+                         })
 
-                    
+
                })
                .catch(err => {
                     console.log(err.message);
@@ -128,6 +130,9 @@ const Login = () => {
                                              <div className="w-full px-3 mb-5">
 
                                                   <input className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold" value="Log in" type="submit" />
+                                                  <div>
+                                                       {loginError && <p className='text-red-600 text-center'>{loginError}</p>}
+                                                  </div>
                                                   <div className="divider w-72  m-auto mt-3 mb-3">OR</div>
 
                                                   <div className='flex justify-center'>

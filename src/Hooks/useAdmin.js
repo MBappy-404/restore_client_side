@@ -5,11 +5,11 @@ const useAdmin = email => {
     const [isAdminLoading, setIsAdminLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/admin/${email}`)
+            fetch(`http://localhost:5000/users/verify?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    setIsAdmin(data.isAdmin);
+                    setIsAdmin(data.type);
                     setIsAdminLoading(false);
                 })
         }

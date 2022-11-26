@@ -12,6 +12,8 @@ import Products from "../Pages/Home/Category/Products";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Signup&Signin/Login";
 import Signup from "../Pages/Signup&Signin/Signup";
+import Dashboard from '../Pages/Dashboard/Dashboard'
+import PrivateRoute from "./PrivateRoute";
 
  
 
@@ -44,7 +46,7 @@ import Signup from "../Pages/Signup&Signin/Signup";
                     {
                          path:'/category/:name',
                          loader: ({params}) => fetch(`http://localhost:5000/category/${params.name}`),
-                         element:<Products></Products>
+                         element: <PrivateRoute><Products></Products></PrivateRoute>
                     }
                ]
 
@@ -52,13 +54,13 @@ import Signup from "../Pages/Signup&Signin/Signup";
 
           {
                path: '/dashboard',
-               element:  <DashboardLayout></DashboardLayout>,
+               element:  <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
                // errorElement: <ErrorPage></ErrorPage>,
                children: [
      
                     {
                          path: '/dashboard',
-                         element: <MyOrders></MyOrders>
+                         element: <Dashboard></Dashboard>
                     },
                     {
                          path: '/dashboard/myOrders',

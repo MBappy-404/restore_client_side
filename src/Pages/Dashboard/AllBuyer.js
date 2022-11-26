@@ -45,7 +45,7 @@ const AllBuyer = () => {
                                              <th><p className='ml-3'>{i + 1}</p></th>
                                              <td><p className=' font-medium text-sm '>{buyer.name}</p></td>
                                              <td><p className=' font-medium text-sm'>{buyer.email}</p></td>
-                                             <td><button onClick={()=>handleDeleteBuyer(buyer)} className='btn btn-primary btn-sm ml-2'>Delete</button></td>
+                                             <td><button onClick={()=>handleDeleteBuyer(buyer)} className='btn btn-primary btn-sm ml-4'>Delete</button></td>
                                         </tr>
                                    )
                               }
