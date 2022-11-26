@@ -14,6 +14,7 @@ import Login from "../Pages/Signup&Signin/Login";
 import Signup from "../Pages/Signup&Signin/Signup";
 import Dashboard from '../Pages/Dashboard/Dashboard'
 import PrivateRoute from "./PrivateRoute";
+import Payment from "../Pages/Dashboard/Payment";
 
  
 
@@ -86,11 +87,11 @@ import PrivateRoute from "./PrivateRoute";
                          path: '/dashboard/reportedItems',
                          element: <ReportedItems></ReportedItems>
                     },
-                    // {
-                    //      path: '/dashboard/payment/:id',
-                    //      element: <PrivateRoute> <Payment></Payment> </PrivateRoute>,
-                    //      loader: ({params}) => fetch(`http://localhost:5000/booking/${params.id}`)
-                    // }
+                    {
+                         path: '/dashboard/payment/:id',
+                         element: <PrivateRoute> <Payment></Payment> </PrivateRoute>,
+                         loader: ({params}) => fetch(`http://localhost:5000/orders/${params.id}`)
+                    }
                ]
           }
 

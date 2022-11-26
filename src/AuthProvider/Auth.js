@@ -26,6 +26,7 @@ const Auth = ({children}) => {
      }
      const logOut = () =>{
           setLoading(true)
+          localStorage.removeItem('accessToken')
           return signOut(auth);
      }
 
@@ -56,6 +57,7 @@ const Auth = ({children}) => {
           createUser,
           signIn,
           logOut,
+          loading,
           user,
           updateUser,
           googleProvider

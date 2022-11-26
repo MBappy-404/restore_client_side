@@ -25,7 +25,7 @@ const Advertise = () => {
                     
                     {
                          productsItem.filter(products => { return products.ads === 'true'}).map( product => <AdvertiseCard
-                         key='product._id'
+                         key={product._id}
                          product={product}
                          setProducts={setProducts}
                          ></AdvertiseCard>)

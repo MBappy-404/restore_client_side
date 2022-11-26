@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/Auth';
 
 const MyOrders = () => {
@@ -8,10 +9,14 @@ const MyOrders = () => {
      const { user } = useContext(AuthContext);
 
      const url = `http://localhost:5000/orders?email=${user?.email}`
-     const { data: orders = [], refetch } = useQuery({
+     const { data: orders = [] } = useQuery({
           queryKey: ['orders', user?.email],
           queryFn: async () => {
-               const res = await fetch(url);
+               const res = await fetch(url,{
+                    headers: {
+                         authorization: `bearer ${localStorage.getItem('accessToken')}`
+                     }
+               });
                const data = await res.json();
                return data;
           }
@@ -46,7 +51,7 @@ const MyOrders = () => {
                                              </td>
                                              <td><p className='font-semibold'>{order.product_name}</p></td>
                                              <td><p className='font-semibold'>{order.product_price}</p></td>
-                                             <td><button className='btn btn-primary btn-sm ml-2'>Pay</button></td>
+                                             <td><button className='btn btn-primary btn-sm ml-2'><Link to={`/dashboard/payment/${order._id}`}>Pay</Link></button></td>
                                         </tr>
                                    )
                               }

@@ -4,12 +4,23 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../App.css'
 import { AuthContext } from '../../AuthProvider/Auth';
+import useToken from '../../Hooks/useToken';
+
+
 
 const Signup = () => {
      const { register, formState: { errors }, handleSubmit } = useForm();
      const { createUser, updateUser } = useContext(AuthContext);
-     const [ signUpError, setSignupError ] = useState()
+     const [ signUpError, setSignupError ] = useState('')
+     const [createdUserEmail, setCreatedUserEmail] = useState('')
+     const [token] = useToken(createdUserEmail);
      const navigate = useNavigate();
+
+     if(token){
+          // navigate('/');
+          console.log("token",token);
+          console.log(createdUserEmail);
+      }
 
      const handleSignup = data => {
      
@@ -34,9 +45,8 @@ const Signup = () => {
                     console.log(err.message);
                })
      }
-
-
-
+          
+     // store user from database 
      const saveUser = (name, email, password, type) => {
 
           const user = {
@@ -56,12 +66,8 @@ const Signup = () => {
                .then(res => res.json())
                .then(data => {
                     console.log(data);
-                    // setCreateUserEmail(email)
-
-                    navigate('/')
-
-
-
+                    setCreatedUserEmail(email)
+                    
                })
 
      }
