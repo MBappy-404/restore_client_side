@@ -37,8 +37,7 @@ const Login = () => {
                .then(result => {
                     const user = result.user;
                     console.log(user);
-                    // navigate('/')
-
+                  
                     const userData = {
                          name:user?.displayName,
                          email: user?.email,
@@ -55,6 +54,10 @@ const Login = () => {
                     .then(res => res.json())
                     .then( data => {
                          console.log(data);
+                         if(data.acknowledged){
+
+                              navigate('/')
+                         }
                     })
 
                     

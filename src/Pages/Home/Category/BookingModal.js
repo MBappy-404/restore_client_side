@@ -4,11 +4,9 @@ import { AuthContext } from '../../../AuthProvider/Auth';
 
 const BookingModal = ({ products,setProducts }) => {
      const { name, original_price,logo } = products;
-
      const { user } = useContext(AuthContext);
 
      const handleBooking = (event) => {
-
           event.preventDefault();
 
           const form = event.target;
@@ -19,20 +17,19 @@ const BookingModal = ({ products,setProducts }) => {
           const number = form.phone.value;
           const location =form.meetLocation.value;
 
-          const book = {name,email,product_Name,price,number,location};
-          console.log(book);
+          // const book = {name,email,product_Name,price,number,location};
+          // console.log(book);
 
           const orders = {
                product_name: product_Name,
-               buyer_name:user?.displayName,
-               email: user?.email,
+               buyer_name: name,
+               email: email,
                product_price:price,
                phone: number,
                logo,
                location
           }
-
-          // post database
+          // booked item store  database
           fetch('http://localhost:5000/orders',{
                method: 'POST',
                headers: {
@@ -49,12 +46,6 @@ const BookingModal = ({ products,setProducts }) => {
                }
                 
           })
-
-
-
-
-        
-
      }
      return (
           <>

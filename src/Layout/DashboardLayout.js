@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import Navbar from '../Pages/Shared/Navbar';
 
 const DashboardLayout = () => {
+
      return (
           <div>
                <Navbar></Navbar>
@@ -15,15 +16,13 @@ const DashboardLayout = () => {
                     </div>
                     <div className="drawer-side ">
                          <label htmlFor="Dashboard-drawer" className="drawer-overlay"></label>
-                         <ul className="menu p-4  bg-teal-400 w-80 ">
-
-                              <li><Link className='font-bold text-md' to='/dashboard'>My Orders</Link></li>
-                              <li><Link to="/dashboard/allSellers">All Sellers</Link></li>
-                              <li><Link to="/dashboard/allBuyers">All Buyer</Link></li>
-                              <li><Link to="/dashboard/addProducts">Add A product</Link></li>
-                              <li><Link to="/dashboard/myProducts">My product</Link></li>
-                              <li><Link to="/dashboard/reportedItems">Reported Items</Link></li>  
-
+                         <ul className="menu p-4  bg-teal-400 w-80 ">  
+                              <li><Link className='font-semibold' to='/dashboard/myOrders'>My Orders</Link></li>
+                              <li><Link className='font-semibold' to="/dashboard/allSellers">All Sellers</Link></li>
+                              <li><Link className='font-semibold' to="/dashboard/allBuyers">All Buyer</Link></li>
+                              <li><Link className='font-semibold' to="/dashboard/addProducts">Add A product</Link></li>
+                              <li><Link className='font-semibold' to="/dashboard/myProducts">My product</Link></li>
+                              <li><Link className='font-semibold' to="/dashboard/reportedItems">Reported Items</Link></li>  
                          </ul>
 
                     </div>

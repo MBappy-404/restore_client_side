@@ -9,7 +9,6 @@ const Banner = () => {
               <h1 className="mb-5 text-5xl font-bold text-indigo-200">Welcome To Restore</h1>
               <p className="text-2xl font-semi-bold">Buy Your Favorite Laptop</p>
               <p className=" text-2xl font-semibold">Sell Your Old Laptop</p>
-            
             </div>
           </div>
         </div>

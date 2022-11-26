@@ -61,6 +61,10 @@ import Signup from "../Pages/Signup&Signin/Signup";
                          element: <MyOrders></MyOrders>
                     },
                     {
+                         path: '/dashboard/myOrders',
+                         element: <MyOrders></MyOrders>
+                    },
+                    {
                          path: '/dashboard/addProducts',
                          element: <AddProduct></AddProduct>
                     },

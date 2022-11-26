@@ -1,11 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
+import BookingModal from '../Category/BookingModal';
 import AdvertiseCard from './AdvertiseCard';
 
 const Advertise = () => {
 
-     const { data: products = [] } = useQuery({
-          queryKey: ['products'],
+     const [products, setProducts] = useState(null)
+
+     const { data: productsItem = [] } = useQuery({
+          queryKey: ['productsItem'],
           queryFn: async () => {
                const res = await fetch('http://localhost:5000/category');
                const data = await res.json();
@@ -21,12 +24,21 @@ const Advertise = () => {
                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 container mb-5 m-auto'>
                     
                     {
-                         products.filter(products => { return products.ads === 'true'}).map( product => <AdvertiseCard
+                         productsItem.filter(products => { return products.ads === 'true'}).map( product => <AdvertiseCard
                          key='product._id'
                          product={product}
+                         setProducts={setProducts}
                          ></AdvertiseCard>)
                     }
                </div>
+               {
+               products &&
+               <BookingModal
+               products={products}
+               setProducts={setProducts}
+               >
+               </BookingModal>
+              }
           </div>
 
 

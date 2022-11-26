@@ -1,18 +1,19 @@
 import React from 'react';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/Auth';
 
-const AdvertiseCard = ({product, setProducts}) => {
+const AdvertiseCard = ({ product, setProducts }) => {
 
-     const {user} = useContext(AuthContext);
+     const { user } = useContext(AuthContext);
 
-     const { name, logo, location, resale_rice, original_price, used, posted, seller_name,_id, verify, reported } = product;
+     const { name, logo, location, resale_rice, original_price, used, posted, seller_name, verify, } = product;
 
      return (
           <div className=''>
-               
+
                <div className="card w-80 md:w-96  m-auto h-full   bg-indigo-300 shadow-xl">
-               <div className="badge  badge-secondary -ml-5 ">hot</div>
+                    <div className="badge  badge-secondary -ml-5 ">hot</div>
 
                     <figure className="px-6 pt-6">
                          <img src={logo} alt="Shoes" className="rounded-xl" />
@@ -24,15 +25,14 @@ const AdvertiseCard = ({product, setProducts}) => {
                          <p className='text-md font-semibold'> Used Time: <b>{used}</b></p>
                          <p className='text-md font-semibold'> Seller Name: {verify === "true" ? <b>{seller_name} <div className="badge badge-primary w-2 rounded-xl">✓</div></b> : <> {seller_name} </>} </p>
                          <p className='text-md font-semibold'> Seller Location:  <b>{location}</b></p>
-
                          <div className="card-actions flex justify-center md:justify-between mr-5 mt-5">
-                              <label onClick={() => setProducts(product)} htmlFor="bookingModal" className='btn btn-sm btn-primary'>
-                                  {
-                                   user?.uid ? <p>bok now</p> : <p>Please login and book</p>
-                                  }
-                              </label>
+                              {/* advertise button action  */}
+                              {
+                                   user?.uid ? <label onClick={() => setProducts(product)} htmlFor="bookingModal" className='btn btn-sm btn-primary'>Book Now</label>
+                                        :
+                                        <button className='btn btn-sm'> <Link to='/login'>Please login & book</Link> </button>
+                              }
                          </div>
-
                          <div className='card-footer flex justify-end'> <small>{posted}</small> </div>
                     </div>
                </div>
