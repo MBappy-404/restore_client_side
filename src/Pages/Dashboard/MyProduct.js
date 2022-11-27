@@ -34,7 +34,7 @@ const MyProduct = () => {
 
      const handleAdds = (product) =>{
 
-          fetch(`http://localhost:5000/reported/${product._id}`,{
+          fetch(`http://localhost:5000/ads/${product._id}`,{
                method: 'PUT'
           })
           .then(res => res.json())
@@ -72,13 +72,24 @@ const MyProduct = () => {
                                              <th>{i+1}</th>
                                              <td>{product.name}</td>
                                              <td>{product.resale_rice}</td>
-                                             <td> <button className='btn btn-primary btn-xs'>Available</button> </td>
-                                             <td><button onClick={() => handleAdds(product)} className='btn btn-success btn-xs'>Turn On</button></td>
+                                             <td> 
+
+                                                  {
+                                                       product.soldOut ? <button className='btn btn-xs'>Sold out</button> :
+                                                       <button className='btn btn-primary btn-xs'>Available</button> 
+                                                  }
+
+                                             </td>
+                                             <td>
+                                                  {
+                                                       product.ads ? <button className='btn btn-xs'>Running</button> :
+                                                       <button onClick={() => handleAdds(product)} className='btn btn-success btn-xs'>Turn On</button>
+                                                  }
+                                             </td>
                                              <td><button onClick={()=>handleDeleteProduct(product)} className='btn btn-warning btn-xs ml-7'>Delete</button></td>
                                         </tr>
                                    )
                               }
-
                          </tbody>
                     </table>
                </div>

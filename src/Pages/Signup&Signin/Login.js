@@ -5,26 +5,36 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../../App.css'
 import { AuthContext } from '../../AuthProvider/Auth';
 import useToken from '../../Hooks/useToken';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const Login = () => {
      const { register, formState: { errors }, handleSubmit } = useForm();
      const provider = new GoogleAuthProvider();
-     const { signIn, googleProvider } = useContext(AuthContext);
+     const { signIn, googleProvider,loading,setLoading } = useContext(AuthContext);
      const [loginError, setLoginError] = useState();
      const [loginUserEmail, setLoginUserEmail] = useState('');
      const [token] = useToken(loginUserEmail);
      const navigate = useNavigate();
      const location = useLocation()
+     const MySwal = withReactContent(Swal);
      const from = location.state?.from?.pathname || '/';
 
      if (token) {
-          // navigate(from, { replace: true });
-          // console.log("token", token);
-          
-      }
 
-      console.log(loginUserEmail);
-      console.log(token);
+          MySwal.fire({
+               title: 'Login Success',
+               icon: 'success',
+               timer: 1500,
+               showConfirmButton: false,
+          });
+         
+          navigate(from, { replace: true });
+
+     }
+
+     console.log(loginUserEmail);
+     console.log(token);
 
      const handleLogin = data => {
           setLoginError('')
@@ -33,8 +43,10 @@ const Login = () => {
                .then(result => {
                     const user = result.user;
                     console.log(user);
+                    
                     setLoginUserEmail(data.email)
-               
+                    setLoading(false)
+
                })
                .catch(err => {
                     setLoginError(err.message);
@@ -49,6 +61,7 @@ const Login = () => {
                .then(result => {
                     const user = result.user;
                     console.log(user);
+                    setLoginUserEmail(user.email)
 
                     const userData = {
                          name: user?.displayName,
@@ -67,6 +80,12 @@ const Login = () => {
                          .then(data => {
                               console.log(data);
                               if (data.acknowledged) {
+                                   MySwal.fire({
+                                        title: 'Login Success',
+                                        icon: 'success',
+                                        timer: 1500,
+                                        showConfirmButton: false,
+                                   });
 
                                    navigate('/')
                               }
@@ -137,9 +156,11 @@ const Login = () => {
                                         </div>
                                         {/* submit button  */}
                                         <div className="flex -mx-3">
-                                             <div className="w-full px-3 mb-5">
+                                             <div className="w-full  px-3 mb-5">
 
-                                                  <input className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold" value="Log in" type="submit" />
+                                                  <input className="block  w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold" value="Log in" type="submit" />
+
+                                                 
                                                   <div>
                                                        {loginError && <p className='text-red-600 text-center'>{loginError}</p>}
                                                   </div>

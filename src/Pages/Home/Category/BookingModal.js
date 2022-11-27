@@ -1,10 +1,13 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/Auth';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const BookingModal = ({ products,setProducts }) => {
      const { name, original_price,logo,_id } = products;
      const { user } = useContext(AuthContext);
+     const MySwal = withReactContent(Swal);
 
      const handleBooking = (event) => {
           event.preventDefault();
@@ -44,6 +47,12 @@ const BookingModal = ({ products,setProducts }) => {
                console.log(data);
                if(data.acknowledged){
 
+                    MySwal.fire({
+                         title: 'Booking Success',
+                         icon: 'success',
+                         text: 'Now you can see your order on Dashboard',
+                         showConfirmButton: true,
+                    });
                      setProducts(null)
                }
                 

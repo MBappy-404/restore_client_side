@@ -2,11 +2,14 @@ import React from 'react';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/Auth';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const AddProduct = () => {
 
      const { user } = useContext(AuthContext);
      const navigate = useNavigate();
+     const MySwal = withReactContent(Swal);
      var now = new Date()
      var time = now.toLocaleTimeString();
 
@@ -43,8 +46,6 @@ const AddProduct = () => {
                number,
                email: user?.email,
                posted: time
-
-
           }
 
           console.log(product);
@@ -60,7 +61,13 @@ const AddProduct = () => {
                .then(res => res.json())
                .then(data => {
                     console.log(data);
-                    navigate('/dashboard/myProducts')
+                    MySwal.fire({
+                         title: 'Product Added Success',
+                         icon: 'success',
+                         text: 'Now you can mange your product',
+                         showConfirmButton: true,
+                    });
+                    navigate('/dashboard/myProducts');
                })
      }
      return (
@@ -88,7 +95,7 @@ const AddProduct = () => {
                                                   id="Service Name"
                                                   name='serviceName'
                                                   type="text"
-                                                  placeholder="Service Name"
+                                                  placeholder="Product Name"
                                                   required
                                              />
                                         </div>
@@ -115,7 +122,7 @@ const AddProduct = () => {
                                                   className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                                   id="Service Name"
                                                   name='originalPrice'
-                                                  type="text"
+                                                  type="number"
                                                   placeholder="Original Price"
                                                   required
                                              />
@@ -128,7 +135,7 @@ const AddProduct = () => {
                                                   className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                                   id="Resale Price"
                                                   name='resalePrice'
-                                                  type="text"
+                                                  type="number"
                                                   placeholder="Resale price.."
                                                   required
                                              />

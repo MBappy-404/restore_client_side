@@ -1,7 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import React from 'react';
 
 const AllSeller = () => {
+
+     const MySwal = withReactContent(Swal);
 
      const { data: users = [], refetch } = useQuery({
           queryKey: ['users'],
@@ -13,6 +17,7 @@ const AllSeller = () => {
 
      })
 
+     //delete seller
      const handleDeleteUser = (seller) => {
           fetch(`http://localhost:5000/users/${seller._id}`, {
                method: 'DELETE'
@@ -21,6 +26,12 @@ const AllSeller = () => {
                .then(data => {
                     // console.log(data);
                     if (data.acknowledged) {
+                         MySwal.fire({
+                              title: 'Seller Delete Success',
+                              icon: 'success',
+                              timer: 1500,
+                              showConfirmButton: false,
+                         });
 
                     }
                     refetch()
@@ -38,6 +49,13 @@ const AllSeller = () => {
                .then(data => {
                     console.log(data);
                     if (data.modifiedCount > 0) {
+
+                         MySwal.fire({
+                              title: 'Seller Verify Success',
+                              icon: 'success',
+                              timer: 1500,
+                              showConfirmButton: false,
+                         });
 
                          refetch()
                     }

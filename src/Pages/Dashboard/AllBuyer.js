@@ -1,7 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const AllBuyer = () => {
+
+     const MySwal = withReactContent(Swal);
      const { data: users = [],refetch } = useQuery({
           queryKey: ['users'],
           queryFn: async () => {
@@ -20,6 +24,12 @@ const AllBuyer = () => {
           .then(data => {
                // console.log(data);
                if(data.acknowledged){
+                    MySwal.fire({
+                         title: 'Buyer Delete Success',
+                         icon: 'success',
+                         timer: 1500,
+                         showConfirmButton: false,
+                    });
                      
                }
                refetch()

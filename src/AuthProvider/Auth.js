@@ -13,7 +13,7 @@ const Auth = ({children}) => {
 
      
      const [user, setUser] = useState(null);
-     const [loading, setLoading] = useState();
+     const [loading, setLoading] = useState(true);
 
 
      const createUser = (email, password) =>{

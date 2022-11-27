@@ -5,25 +5,27 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../../App.css'
 import { AuthContext } from '../../AuthProvider/Auth';
 import useToken from '../../Hooks/useToken';
+import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
 
 
 
 const Signup = () => {
      const { register, formState: { errors }, handleSubmit } = useForm();
      const { createUser, updateUser } = useContext(AuthContext);
-     const [ signUpError, setSignupError ] = useState('')
+     const [signUpError, setSignupError] = useState('')
      const [createdUserEmail, setCreatedUserEmail] = useState('')
      const [token] = useToken(createdUserEmail);
      const navigate = useNavigate();
+     const MySwal = withReactContent(Swal);
 
-     if(token){
-          // navigate('/');
-          console.log("token",token);
-          console.log(createdUserEmail);
-      }
+     if (token) {
+          navigate('/');
+
+     }
 
      const handleSignup = data => {
-     
+
 
           createUser(data.email, data.password)
                .then(result => {
@@ -45,7 +47,7 @@ const Signup = () => {
                     console.log(err.message);
                })
      }
-          
+
      // store user from database 
      const saveUser = (name, email, password, type) => {
 
@@ -67,7 +69,14 @@ const Signup = () => {
                .then(data => {
                     console.log(data);
                     setCreatedUserEmail(email)
-                    
+                    MySwal.fire({
+                         title: 'Sign Success',
+                         timer: 1500,
+                         showConfirmButton: false,
+                         icon: 'success',
+
+                    });
+
                })
 
      }

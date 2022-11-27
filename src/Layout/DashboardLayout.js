@@ -9,7 +9,7 @@ import Navbar from '../Pages/Shared/Navbar';
 const DashboardLayout = () => {
 
      const { user } = useContext(AuthContext);
-     const [isAdmin] = useAdmin(user?.email)
+     const [type] = useAdmin(user?.email)
 
      return (
           <div>
@@ -26,14 +26,14 @@ const DashboardLayout = () => {
                          <ul className="menu p-4  bg-teal-400 w-80 ">
 
                               {
-                                   isAdmin === "Buyer" &&
+                                   type === "Buyer" &&
                                    <>
                                         <li><Link className='font-semibold' to='/dashboard/myOrders'>My Orders</Link></li>
                                    </>
 
                               }
                               {
-                                   isAdmin === "Seller" &&
+                                   type === "Seller" &&
                                    <>
                                         <li><Link className='font-semibold' to="/dashboard/addProducts">Add A product</Link></li>
                                         <li><Link className='font-semibold' to="/dashboard/myProducts">My product</Link></li>
@@ -41,7 +41,7 @@ const DashboardLayout = () => {
                               }
 
                               {
-                                   isAdmin === "Admin" &&
+                                   type === "Admin" &&
                                    <>
                                         <li><Link className='font-semibold' to="/dashboard/allSellers">All Sellers</Link></li>
                                         <li><Link className='font-semibold' to="/dashboard/allBuyers">All Buyer</Link></li>

@@ -1,6 +1,9 @@
 import React from 'react';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const ProductCard = ({ product, setProducts }) => {
+     const MySwal = withReactContent(Swal);
      const { name, logo, location, resale_rice, original_price, used, posted, seller_name,_id, verify, reported } = product;
 
      const handleReport = id =>{
@@ -10,7 +13,16 @@ const ProductCard = ({ product, setProducts }) => {
           .then(res => res.json())
           .then(data => {
                console.log(data);
-               
+               if(data.acknowledged){
+
+                    MySwal.fire({
+                         title: 'Product Reported Success',
+                         timer: 1500,
+                         showConfirmButton: false,
+                         icon: 'success',
+
+                    });
+               }
           })
      }
      return (

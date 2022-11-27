@@ -1,7 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const ReportedItems = () => {
+
+     const MySwal = withReactContent(Swal);
 
      const { data: products = [], refetch } = useQuery({
           queryKey: ['products',],
@@ -23,8 +27,16 @@ const ReportedItems = () => {
                     // console.log(data);
                     if (data.acknowledged) {
 
+                         MySwal.fire({
+                              title: 'Product Delete Success',
+                              icon: 'success',
+                              timer: 1500,
+                              showConfirmButton: false,
+                         });
+
+                         refetch()
                     }
-                    refetch()
+                   
                })
           
      }

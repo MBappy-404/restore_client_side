@@ -5,8 +5,6 @@ import router from "./Routes/Route";
 
 function App() {
 
-  
-
   return (
     <div>
 
