@@ -24,7 +24,7 @@ const Advertise = () => {
                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 container mb-5 m-auto'>
                     
                     {
-                         productsItem.filter(products => { return products.ads === 'true'}).map( product => <AdvertiseCard
+                         productsItem.filter(products => { return products.ads === 'true' && !products.soldOut }).map( product => <AdvertiseCard
                          key={product._id}
                          product={product}
                          setProducts={setProducts}

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/Auth';
 
 const BookingModal = ({ products,setProducts }) => {
-     const { name, original_price,logo } = products;
+     const { name, original_price,logo,_id } = products;
      const { user } = useContext(AuthContext);
 
      const handleBooking = (event) => {
@@ -17,7 +17,7 @@ const BookingModal = ({ products,setProducts }) => {
           const number = form.phone.value;
           const location =form.meetLocation.value;
 
-          // const book = {name,email,product_Name,price,number,location};
+          // const book = {name,email,product_Name,price,number,location,_id};
           // console.log(book);
 
           const orders = {
@@ -27,8 +27,10 @@ const BookingModal = ({ products,setProducts }) => {
                product_price:price,
                phone: number,
                logo,
-               location
+               location,
+               product_id:_id
           }
+          console.log(orders);
           // booked item store  database
           fetch('http://localhost:5000/orders',{
                method: 'POST',

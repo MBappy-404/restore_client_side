@@ -25,23 +25,20 @@ const DashboardLayout = () => {
                          <label htmlFor="Dashboard-drawer" className="drawer-overlay"></label>
                          <ul className="menu p-4  bg-teal-400 w-80 ">
 
-                             {
-                              isAdmin === "Buyer"  && 
-                              <>
-                               <li><Link className='font-semibold' to='/dashboard/myOrders'>My Orders</Link></li>
-                              </>
-                              
-                             }
+                              {
+                                   isAdmin === "Buyer" &&
+                                   <>
+                                        <li><Link className='font-semibold' to='/dashboard/myOrders'>My Orders</Link></li>
+                                   </>
 
-
-                             {
-                              isAdmin === "Seller" && 
-
-                              <>
-                               <li><Link className='font-semibold' to="/dashboard/addProducts">Add A product</Link></li>
-                              <li><Link className='font-semibold' to="/dashboard/myProducts">My product</Link></li>
-                              </>
-                             }
+                              }
+                              {
+                                   isAdmin === "Seller" &&
+                                   <>
+                                        <li><Link className='font-semibold' to="/dashboard/addProducts">Add A product</Link></li>
+                                        <li><Link className='font-semibold' to="/dashboard/myProducts">My product</Link></li>
+                                   </>
+                              }
 
                               {
                                    isAdmin === "Admin" &&

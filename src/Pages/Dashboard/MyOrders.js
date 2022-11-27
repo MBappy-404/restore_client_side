@@ -9,7 +9,7 @@ const MyOrders = () => {
      const { user } = useContext(AuthContext);
 
      const url = `http://localhost:5000/orders?email=${user?.email}`
-     const { data: orders = [] } = useQuery({
+     const { data: orders = [ ] } = useQuery({
           queryKey: ['orders', user?.email],
           queryFn: async () => {
                const res = await fetch(url,{
@@ -33,15 +33,15 @@ const MyOrders = () => {
                                    <th>Product</th>
                                    <th>Product Name</th>
                                    <th>Price </th>
-                                   <th>Payment</th>
+                                   <th>Payment Status</th>
                               </tr>
                          </thead>
                          <tbody>
                               {
-                                   orders.map((order, i) =>
+                                   orders?.map((order, i) =>
 
                                         <tr key={order._id}>
-                                             <th><p className='ml-3'>{i + 1}</p></th>
+                                             <th><p className='ml-2'>{i + 1}</p></th>
                                              <td>
                                                   <div className="avatar">
                                                        <div className="mask mask-squircle w-14 h-14">
@@ -50,8 +50,15 @@ const MyOrders = () => {
                                                   </div>
                                              </td>
                                              <td><p className='font-semibold'>{order.product_name}</p></td>
-                                             <td><p className='font-semibold'>{order.product_price}</p></td>
-                                             <td><button className='btn btn-primary btn-sm ml-2'><Link to={`/dashboard/payment/${order._id}`}>Pay</Link></button></td>
+                                             <td><p className='font-semibold'>${order.product_price}</p></td>
+                                             <td>{
+                                                  
+                                                  order.paid ? <p className=' btn-success text-black btn btn-sm  ml-6 font-semibold'>Paid</p> :
+                                                  <button className='btn btn-primary btn-sm ml-2'><Link to={`/dashboard/payment/${order._id}`}>Pay now</Link></button>
+                                                  
+                                                  }
+
+                                             </td>
                                         </tr>
                                    )
                               }

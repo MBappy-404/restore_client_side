@@ -14,7 +14,7 @@ import Login from "../Pages/Signup&Signin/Login";
 import Signup from "../Pages/Signup&Signin/Signup";
 import Dashboard from '../Pages/Dashboard/Dashboard'
 import PrivateRoute from "./PrivateRoute";
-import Payment from "../Pages/Dashboard/Payment";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
  
 
