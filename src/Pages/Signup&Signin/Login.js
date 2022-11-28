@@ -90,8 +90,6 @@ const Login = () => {
                                    navigate('/')
                               }
                          })
-
-
                })
                .catch(err => {
                     console.log(err.message);
@@ -105,7 +103,7 @@ const Login = () => {
 
 
           <div>
-               <div className="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-10 py-20">
+               <div className="min-w-screen min-h-screen  flex items-center justify-center px-10 py-20">
                     <div className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style={{ maxWidth: '1000px' }}>
                          <div className="md:flex w-full">
 
@@ -164,10 +162,10 @@ const Login = () => {
                                                   <div>
                                                        {loginError && <p className='text-red-600 text-center'>{loginError}</p>}
                                                   </div>
-                                                  <div className="divider w-72  m-auto mt-3 mb-3">OR</div>
+                                                  <div className="divider w-72  m-auto mt-3 mb-3">Log in with</div>
 
                                                   <div className='flex justify-center'>
-                                                       <button onClick={googleSignIn} className='btn btn-primary btn-outline  w-1/5'> <img src="https://freesvg.org/img/1534129544.png" alt="" className='w-8' /></button>
+                                                         <img  onClick={googleSignIn}  src="https://freesvg.org/img/1534129544.png" alt="" className='w-8 cursor-pointer' /> 
                                                   </div>
 
                                              </div>

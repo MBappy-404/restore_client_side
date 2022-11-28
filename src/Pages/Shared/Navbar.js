@@ -24,12 +24,12 @@ const Navbar = () => {
      </>
      return (
 
-          <div className="navbar bg-indigo-200">
+          <div className="navbar bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500  sticky top-0 z-50">
 
                <div className="navbar-start md:ml-10">
                     <div className="dropdown">
                          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                              <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current text-white"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                          </label>
                          <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52">
                               {menuItem}
@@ -38,18 +38,18 @@ const Navbar = () => {
                     <img src={logo} className=' w-24 md:w-44' alt="" />
                </div>
                <div className="navbar-center ">
-                    <ul className="menu menu-horizontal hidden lg:flex p-0">
+                    <ul className="menu menu-horizontal hidden text-white lg:flex p-0">
                          {menuItem}
                     </ul>
                     <div className=' lg:hidden navbar-end '>
                          <label tabIndex={1} htmlFor="Dashboard-drawer" className="btn btn-ghost  lg:hidden">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                          </label>
                     </div>
                </div>
                <div className="navbar-end">
                     <div className="dropdown dropdown-end md:mr-10 mr-0">
-                         <label tabIndex={0} className="btn btn-ghost w-16  btn-circle avatar">
+                         <label tabIndex={0} className="btn btn-ghost w-14  btn-circle avatar">
                               <div className="w-20 rounded-full">
                                    {
                                         user?.photoURL ? <img src={user?.photoURL} alt='' /> : <img src='https://i.pinimg.com/736x/c9/e3/e8/c9e3e810a8066b885ca4e882460785fa.jpg' alt='' />

@@ -1,18 +1,28 @@
 import React from 'react';
+import banner from '../../../Assets/image/Banner_Laptop.svg'
 
 const Banner = () => {
-     return (
-          <div className="hero min-h-screen" style={{ backgroundImage: `url("https://dlcdnwebimgs.asus.com/files/media/32AC71C1-A967-4B4A-A81C-23AB82184698/v3/images/large/1x/01__kv_rog_flow_x16.jpg")` }}>
-          <div className="hero-overlay bg-opacity-80"></div>
-          <div className="hero-content text-center text-neutral-content">
-            <div className="">
-              <h1 className="mb-5 text-5xl font-bold text-indigo-200">Welcome To Restore</h1>
-              <p className="text-2xl font-semi-bold">Buy Your Favorite Laptop</p>
-              <p className=" text-2xl font-semibold">Sell Your Old Laptop</p>
+  return (
+    <div>
+      <section className=" bg-animated  dark:text-gray-100">
+        <div className="container flex flex-col-reverse md:flex justify-center  p-6 mx-auto sm:py-12 lg:py-14 lg:flex-row lg:justify-evenly">
+          <div className="flex flex-col  justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+            <h1 className="text-3xl font-bold leading-none md:text-5xl">Welcome To <span className="dark:text-violet-400">Restore</span><br />
+            <span className=' text-2xl '>  Restore Your  Old Laptop</span>
+            </h1>
+            <p className="mt-2 mb-6 text-xs md:text-lg">Restore is a platform on which you can buy and sell Laptop! We help people buy and sell Laptops for our customers.
+            </p>
+            <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+             <button id='category' className='btn glass bg-indigo-800'>Get Started</button>
             </div>
           </div>
+          <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+            <img src={banner} alt="" className=" hero h-72 sm:h-96 lg:h-full xl:h-112 2xl:h-128" />
+          </div>
         </div>
-     );
+      </section>
+    </div>
+  );
 };
 
 export default Banner;

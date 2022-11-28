@@ -3,11 +3,14 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/Auth';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import useAdmin from '../../../Hooks/useAdmin';
 
 const BookingModal = ({ products,setProducts }) => {
      const { name, original_price,logo,_id } = products;
-     const { user } = useContext(AuthContext);
      const MySwal = withReactContent(Swal);
+     const { user } = useContext(AuthContext);
+     const [type] = useAdmin(user?.email)
+
 
      const handleBooking = (event) => {
           event.preventDefault();
@@ -65,7 +68,7 @@ const BookingModal = ({ products,setProducts }) => {
                <div className="modal">
                     <div className="modal-box relative">
                          <label htmlFor="bookingModal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                         <h3 className="text-lg font-bold">{name}</h3>
+                         <h3 className="text-lg font-bold text-center">{name}</h3>
                          <form onSubmit={handleBooking} className='text-center mt-8'>
                               <input type="text" defaultValue={user?.displayName} readOnly name='name' className="input input-bordered mb-3 input-md w-full " />
                               <input type="text" readOnly defaultValue={user?.email} name='email' className="input input-bordered mb-3 input-md w-full " />
@@ -73,7 +76,10 @@ const BookingModal = ({ products,setProducts }) => {
                               <input type="text" readOnly defaultValue={original_price} name='price' className="input input-bordered mb-3 input-md w-full " />
                               <input type="text" name='phone' placeholder="Enter Your Contact Number" className="input input-bordered mb-3 input-md w-full " required />
                               <input type="text" name='meetLocation' placeholder="Enter Meeting Location" className="input input-bordered mb-3 input-md w-full" required />
+                             {
+                              type === "Admin" && "Seller" ?  <p className=' no-animation text-white btn w-full font-semibold' >Only Buyers Can Book</p>:
                               <input type="submit" value='Submit' className="btn   mb-3 input-md w-full " />
+                             }
                          </form>
                     </div>
                </div>

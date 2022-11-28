@@ -10,14 +10,13 @@ const Products = () => {
      const [products, setProducts] = useState(null)
      const productItem = useLoaderData()
 
-    
 
      return (
-          <div className='container m-auto'>
-              <h1 className='text-3xl font-bold text-indigo-700'> Category:</h1>
+          <div className='container m-auto my-16'>
+              <h1 className='text-3xl font-bold text-indigo-700 ml-5 mb-10 -mt-5'>  Product Available: {productItem.filter(products => { return  !products.soldOut }).length}</h1>
                <div className='flex flex-wrap  justify-center container'>
                     {
-                         productItem.map( product => <ProductCard
+                         productItem.filter(products => { return  !products.soldOut }).map( product => <ProductCard
                          key={product.product_id}
                          product={product}
                          setProducts={setProducts}

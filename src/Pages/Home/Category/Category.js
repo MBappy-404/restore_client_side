@@ -15,10 +15,9 @@ const Category = () => {
      })
 
      return (
-          <div className='mb-10 mt-10 container m-auto'>
-               <h1 className='text-indigo-600 font-bold text-4xl mb-8 text-center'>Laptop Categories</h1>
+          <div className='my-24 container m-auto' >
+               <h1 className='text-indigo-600 font-bold text-3xl md:text-4xl mb-10 md:mb-20 text-center'>Laptop Categories For You</h1>
                <div className=' flex flex-wrap   justify-center container '>
-
                     {
                          categories.map(category => <CategoryCard
                               key={category._id}

@@ -6,6 +6,7 @@ import useAdmin from '../Hooks/useAdmin';
 import Navbar from '../Pages/Shared/Navbar';
 
 
+
 const DashboardLayout = () => {
 
      const { user } = useContext(AuthContext);
@@ -23,29 +24,29 @@ const DashboardLayout = () => {
                     </div>
                     <div className="drawer-side ">
                          <label htmlFor="Dashboard-drawer" className="drawer-overlay"></label>
-                         <ul className="menu p-4  bg-teal-400 w-80 ">
+                         <ul className="menu p-4 text-white bg-indigo-500 w-60 ">
 
                               {
                                    type === "Buyer" &&
                                    <>
-                                        <li><Link className='font-semibold' to='/dashboard/myOrders'>My Orders</Link></li>
+                                        <li><Link className='font-semibold text-center glass mt-5' to='/dashboard/myOrders'>My Orders</Link></li>
                                    </>
 
                               }
                               {
                                    type === "Seller" &&
                                    <>
-                                        <li><Link className='font-semibold' to="/dashboard/addProducts">Add A product</Link></li>
-                                        <li><Link className='font-semibold' to="/dashboard/myProducts">My product</Link></li>
+                                        <li className='mb-2 mt-5' ><Link className='font-semibold glass' to="/dashboard/addProducts">Add A product</Link></li>
+                                        <li><Link className='font-semibold glass' to="/dashboard/myProducts">My product</Link></li>
                                    </>
                               }
 
                               {
                                    type === "Admin" &&
                                    <>
-                                        <li><Link className='font-semibold' to="/dashboard/allSellers">All Sellers</Link></li>
-                                        <li><Link className='font-semibold' to="/dashboard/allBuyers">All Buyer</Link></li>
-                                        <li><Link className='font-semibold' to="/dashboard/reportedItems">Reported Items</Link></li>
+                                        <li><Link className='font-semibold mb-2 glass mt-5' to="/dashboard/allSellers">All Sellers</Link></li>
+                                        <li><Link className='font-semibold mb-2 glass' to="/dashboard/allBuyers">All Buyer</Link></li>
+                                        <li><Link className='font-semibold glass' to="/dashboard/reportedItems">Reported Items</Link></li>
                                    </>
                               }
 
