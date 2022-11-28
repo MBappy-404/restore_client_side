@@ -5,8 +5,8 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import useAdmin from '../../../Hooks/useAdmin';
 
-const BookingModal = ({ products,setProducts }) => {
-     const { name, original_price,logo,_id } = products;
+const BookingModal = ({ product,modalId }) => {
+     const { name, resale_rice,logo,_id } = product;
      const MySwal = withReactContent(Swal);
      const { user } = useContext(AuthContext);
      const [type] = useAdmin(user?.email)
@@ -38,7 +38,7 @@ const BookingModal = ({ products,setProducts }) => {
           }
           console.log(orders);
           // booked item store  database
-          fetch('http://localhost:5000/orders',{
+          fetch('https://restore-server.vercel.app/orders',{
                method: 'POST',
                headers: {
                     'content-type': 'application/json'
@@ -56,30 +56,34 @@ const BookingModal = ({ products,setProducts }) => {
                          text: 'Now you can see your order on Dashboard',
                          showConfirmButton: true,
                     });
-                     setProducts(null)
                }
-                
           })
      }
      return (
           <>
                {/* Put this part before </body> tag */}
-               <input type="checkbox" id="bookingModal" className="modal-toggle" />
+               <input type="checkbox" id={`modal-${modalId}`} className="modal-toggle" />
                <div className="modal">
                     <div className="modal-box relative">
-                         <label htmlFor="bookingModal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                         <h3 className="text-lg font-bold text-center">{name}</h3>
-                         <form onSubmit={handleBooking} className='text-center mt-8'>
+                         <label htmlFor={`modal-${modalId}`} className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                         <h3 className="text-lg font-bold text-center">Product: {name}</h3>
+                         <form onSubmit={handleBooking} className='mt-8'>
+                              <label>Your Name</label>
                               <input type="text" defaultValue={user?.displayName} readOnly name='name' className="input input-bordered mb-3 input-md w-full " />
+                              <label>Your Email</label>
                               <input type="text" readOnly defaultValue={user?.email} name='email' className="input input-bordered mb-3 input-md w-full " />
+                              <label>Product</label>
                               <input type="text" readOnly defaultValue={name} name='productName' className="input input-bordered mb-3 input-md w-full " />
-                              <input type="text" readOnly defaultValue={original_price} name='price' className="input input-bordered mb-3 input-md w-full " />
+                              <label>Price</label>
+                              <input type="text" readOnly defaultValue={resale_rice} name='price' className="input input-bordered mb-3 input-md w-full " />
+                              <label>Phone</label>
                               <input type="text" name='phone' placeholder="Enter Your Contact Number" className="input input-bordered mb-3 input-md w-full " required />
+                              <label>Meet Location</label>
                               <input type="text" name='meetLocation' placeholder="Enter Meeting Location" className="input input-bordered mb-3 input-md w-full" required />
                              {
                               type === "Admin" && "Seller" ?  <p className=' no-animation text-white btn w-full font-semibold' >Only Buyers Can Book</p>:
-                              <input type="submit" value='Submit' className="btn   mb-3 input-md w-full " />
-                             }
+                              <input type="submit" value='Submit' className="btn mb-3 input-md w-full " />
+                              } 
                          </form>
                     </div>
                </div>

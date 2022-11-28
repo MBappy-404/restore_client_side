@@ -10,7 +10,7 @@ const AllSeller = () => {
      const { data: users = [], refetch } = useQuery({
           queryKey: ['users'],
           queryFn: async () => {
-               const res = await fetch('http://localhost:5000/users');
+               const res = await fetch('https://restore-server.vercel.app/users');
                const data = await res.json();
                return data;
           }
@@ -19,7 +19,7 @@ const AllSeller = () => {
 
      //delete seller
      const handleDeleteUser = (seller) => {
-          fetch(`http://localhost:5000/users/${seller._id}`, {
+          fetch(`https://restore-server.vercel.app/users/${seller._id}`, {
                method: 'DELETE'
           })
                .then(res => res.json())
@@ -42,7 +42,7 @@ const AllSeller = () => {
 
           
 
-          fetch(`http://localhost:5000/category?email=${seller.email}`, {
+          fetch(`https://restore-server.vercel.app/category?email=${seller.email}`, {
                method:'PUT',
           })
                .then(res => res.json())

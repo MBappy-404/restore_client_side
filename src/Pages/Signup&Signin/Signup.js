@@ -26,7 +26,6 @@ const Signup = () => {
 
      const handleSignup = data => {
 
-
           createUser(data.email, data.password)
                .then(result => {
                     const user = result.user;
@@ -58,7 +57,7 @@ const Signup = () => {
                type: type
           };
 
-          fetch('http://localhost:5000/users', {
+          fetch('https://restore-server.vercel.app /users', {
                method: 'PUT',
                headers: {
                     'content-type': 'application/json'
@@ -74,11 +73,8 @@ const Signup = () => {
                          timer: 1500,
                          showConfirmButton: false,
                          icon: 'success',
-
                     });
-
                })
-
      }
 
 
@@ -91,7 +87,7 @@ const Signup = () => {
 
                               {/* left image svg  */}
                               <div className="hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
-                                   <img src='https://nilgiricollege.ac.in/app/app-files/images/userlog.png' className='w-full mt-16' alt="" />
+                                   <img src='https://nilgiricollege.ac.in/app/app-files/images/userlog.png' className='w-full mt-24' alt="" />
                               </div>
                               <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
                                    <div className="text-center mb-10">

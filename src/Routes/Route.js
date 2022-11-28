@@ -47,7 +47,7 @@ import Errorpage from "../Pages/Errorpage/Errorpage";
                     },
                     {
                          path:'/category/:name',
-                         loader: ({params}) => fetch(`http://localhost:5000/category/${params.name}`),
+                         loader: ({params}) => fetch(`https://restore-server.vercel.app/category/${params.name}`),
                          element: <PrivateRoute><Products></Products></PrivateRoute>
                     }
                ]
@@ -91,7 +91,7 @@ import Errorpage from "../Pages/Errorpage/Errorpage";
                     {
                          path: '/dashboard/payment/:id',
                          element: <PrivateRoute> <Payment></Payment> </PrivateRoute>,
-                         loader: ({params}) => fetch(`http://localhost:5000/orders/${params.id}`)
+                         loader: ({params}) => fetch(`https://restore-server.vercel.app/orders/${params.id}`)
                     }
                ]
           }

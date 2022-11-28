@@ -22,7 +22,7 @@ const CheckOutForm = ({ order }) => {
 
      useEffect(() => {
           // Create PaymentIntent as soon as the page loads
-          fetch("http://localhost:5000/create-payment-intent", {
+          fetch("https://restore-server.vercel.app/create-payment-intent", {
                method: "POST",
                headers: {
                     "content-type": "application/json",
@@ -89,7 +89,7 @@ const CheckOutForm = ({ order }) => {
                     orderId: _id,
                }
 
-               fetch('http://localhost:5000/payments', {
+               fetch('https://restore-server.vercel.app/payments', {
                     method: "POST",
                     headers: {
                          'content-type': 'application/json'
@@ -104,7 +104,7 @@ const CheckOutForm = ({ order }) => {
                               setSuccess("Congratulation! Payment Done ")
                               setTrxId(paymentIntent.id)
                               //update productCollection sold status
-                              fetch(`http://localhost:5000/category/soldOut/${product_id}`, {
+                              fetch(`https://restore-server.vercel.app/category/soldOut/${product_id}`, {
                                    method: "PUT",
                               })
                                    .then(res => res.json())

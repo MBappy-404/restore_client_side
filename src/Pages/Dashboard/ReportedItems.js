@@ -11,7 +11,7 @@ const ReportedItems = () => {
           queryKey: ['products',],
           queryFn: async () => {
 
-               const res = await fetch('http://localhost:5000/category');
+               const res = await fetch('https://restore-server.vercel.app/category');
                const data = await res.json();
                return data;
           }
@@ -19,7 +19,7 @@ const ReportedItems = () => {
 
      const handleDeleteProduct = product =>{
 
-          fetch(`http://localhost:5000/category/${product._id}`, {
+          fetch(`https://restore-server.vercel.app/category/${product._id}`, {
                method:'DELETE',
           })
                .then(res => res.json())

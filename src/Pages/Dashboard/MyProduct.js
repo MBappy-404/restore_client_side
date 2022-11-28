@@ -6,7 +6,7 @@ import { AuthContext } from '../../AuthProvider/Auth';
 const MyProduct = () => {
      const { user } = useContext(AuthContext);
 
-     const url = `http://localhost:5000/myProducts?email=${user?.email}`
+     const url = `https://restore-server.vercel.app/myProducts?email=${user?.email}`
      const { data: products = [],refetch } = useQuery({
           queryKey: ['products', user?.email],
           queryFn: async () => {
@@ -18,7 +18,7 @@ const MyProduct = () => {
      })
 
      const handleDeleteProduct = (product) =>{
-          fetch(`http://localhost:5000/myProducts/${product._id}`,{
+          fetch(`https://restore-server.vercel.app/myProducts/${product._id}`,{
                method: 'DELETE'
           })
           .then(res => res.json())
@@ -34,7 +34,7 @@ const MyProduct = () => {
 
      const handleAdds = (product) =>{
 
-          fetch(`http://localhost:5000/ads/${product._id}`,{
+          fetch(`https://restore-server.vercel.app /ads/${product._id}`,{
                method: 'PUT'
           })
           .then(res => res.json())
@@ -73,7 +73,6 @@ const MyProduct = () => {
                                              <td>{product.name}</td>
                                              <td>{product.resale_rice}</td>
                                              <td> 
-
                                                   {
                                                        product.soldOut ? <button className='btn btn-xs no-animation'>Sold out</button> :
                                                        <button className='btn btn-primary btn-xs no-animation' >Available</button> 

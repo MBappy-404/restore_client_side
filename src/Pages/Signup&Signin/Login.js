@@ -28,9 +28,7 @@ const Login = () => {
                timer: 1500,
                showConfirmButton: false,
           });
-         
           navigate(from, { replace: true });
-
      }
 
      console.log(loginUserEmail);
@@ -54,7 +52,6 @@ const Login = () => {
                })
      }
 
-
      const googleSignIn = () => {
 
           googleProvider(provider)
@@ -69,7 +66,7 @@ const Login = () => {
                          type: 'Buyer'
                     }
 
-                    fetch('http://localhost:5000/users', {
+                    fetch('https://restore-server.vercel.app /users', {
                          method: 'PUT',
                          headers: {
                               'content-type': 'application/json',
@@ -95,9 +92,7 @@ const Login = () => {
                     console.log(err.message);
                     setLoginError(err.message)
                })
-
      }
-
 
      return (
 
@@ -109,7 +104,7 @@ const Login = () => {
 
                               {/* left image svg  */}
                               <div className="hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
-                                   <img src="https://cdni.iconscout.com/illustration/premium/thumb/account-login-4571935-3805756.png" className='mt-32' alt="" />
+                                   <img src="https://cdni.iconscout.com/illustration/premium/thumb/account-login-4571935-3805756.png" className='mt-24' alt="" />
                               </div>
                               <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
                                    <div className="text-center mb-10">
@@ -166,8 +161,7 @@ const Login = () => {
 
                                                   <div className='flex justify-center'>
                                                          <img  onClick={googleSignIn}  src="https://freesvg.org/img/1534129544.png" alt="" className='w-8 cursor-pointer' /> 
-                                                  </div>
-
+                                                  </div>W
                                              </div>
                                         </div>
                                    </form>
@@ -176,11 +170,6 @@ const Login = () => {
                     </div>
                </div>
           </div>
-
-
-
-
-
      );
 };
 

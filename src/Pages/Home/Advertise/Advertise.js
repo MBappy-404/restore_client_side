@@ -10,7 +10,7 @@ const Advertise = () => {
      const { data: productsItem = [] } = useQuery({
           queryKey: ['productsItem'],
           queryFn: async () => {
-               const res = await fetch('http://localhost:5000/category');
+               const res = await fetch('https://restore-server.vercel.app/category');
                const data = await res.json();
                return data;
           }
@@ -22,7 +22,6 @@ const Advertise = () => {
                 <h1 className='text-3xl font-bold text-indigo-500 text-center mt-5 mb-5'>Trending Laptops</h1>
 
                <div className='flex flex-wrap  justify-center container '>
-               
                     
                     {
                          productsItem.filter(products => { return products.ads === 'true' && !products.soldOut }).map( product => <AdvertiseCard

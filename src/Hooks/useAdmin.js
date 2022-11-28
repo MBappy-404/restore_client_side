@@ -5,7 +5,7 @@ const useAdmin = email => {
     const [typeLoading, setTypeLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/verify?email=${email}`)
+            fetch(`https://restore-server.vercel.app/users/verify?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
