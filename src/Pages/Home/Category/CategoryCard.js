@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './CategoryCard.css'
 
 const CategoryCard = ({ category }) => {
      console.log(category);
      const { category_Name } = category;
      return (
-          <div >
-               <div className="card w-60 h-30 m-auto mb-3 bg-primary text-primary-content">
-                    <div className="card-body">
-                         <h2 className="card-title">{category_Name}</h2>
-                         <div className="card-actions justify-end">
-                              <button className="btn"> <Link to={`/category/${category_Name}`}>Go</Link> </button>
+          
+          <div className="card category-card w-72 md:w-48   h-30 m-auto mb-3 bg-indigo-500 text-primary-content">
+                         <div className="card-actions justify-center">
+                              <button className="btn bg-indigo-600 glass  w-full h-24"> <Link to={`/category/${category_Name}`}>{category_Name}</Link> </button>
                          </div>
-                    </div>
+
+                         <a href="https://mythrillfiction.com/" target="_blank"></a>
+           
                </div>
-          </div>
+              
      );
 };
 

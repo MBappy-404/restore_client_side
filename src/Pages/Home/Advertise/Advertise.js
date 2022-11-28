@@ -18,10 +18,11 @@ const Advertise = () => {
      })
      return (
 
-          <div>
+          <div className='container m-auto'>
                 <h1 className='text-3xl font-bold text-indigo-500 text-center mt-5 mb-5'>Trending Laptop</h1>
 
-               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 container mb-5 m-auto'>
+               <div className='flex flex-wrap  justify-center container '>
+               
                     
                     {
                          productsItem.filter(products => { return products.ads === 'true' && !products.soldOut }).map( product => <AdvertiseCard

@@ -13,9 +13,9 @@ const Products = () => {
     
 
      return (
-          <div>
+          <div className='container m-auto'>
               <h1 className='text-3xl font-bold text-indigo-700'> Category:</h1>
-               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 '>
+               <div className='flex flex-wrap  justify-center container'>
                     {
                          productItem.map( product => <ProductCard
                          key={product.product_id}

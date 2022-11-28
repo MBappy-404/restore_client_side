@@ -15,6 +15,7 @@ import Signup from "../Pages/Signup&Signin/Signup";
 import Dashboard from '../Pages/Dashboard/Dashboard'
 import PrivateRoute from "./PrivateRoute";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import Errorpage from "../Pages/Errorpage/Errorpage";
 
  
 
@@ -22,7 +23,7 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
           {
                path: '/',
                element: <Main></Main>,
-               // errorElement:,
+               errorElement:<Errorpage></Errorpage>,
                children: [
                     {
                          path: '/',
@@ -56,7 +57,7 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
           {
                path: '/dashboard',
                element:  <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-               // errorElement: <ErrorPage></ErrorPage>,
+               errorElement: <Errorpage></Errorpage>,
                children: [
      
                     {

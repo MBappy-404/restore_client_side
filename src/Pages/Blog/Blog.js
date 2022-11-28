@@ -3,10 +3,6 @@ import React from 'react';
 const Blog = () => {
      return (
           <div className='container m-auto my-10'>
-
-               <div>
-                    <img className='' src="https://img.freepik.com/free-vector/organic-flat-blog-post-illustration-with-people_23-2148955260.jpg?w=2000"  alt="" />
-               </div>
                <p className='text-3xl font-bold text-center '>BLOG POST</p>
                <div className="flex flex-col m-3 ">
 

@@ -75,14 +75,14 @@ const MyProduct = () => {
                                              <td> 
 
                                                   {
-                                                       product.soldOut ? <button className='btn btn-xs'>Sold out</button> :
-                                                       <button className='btn btn-primary btn-xs'>Available</button> 
+                                                       product.soldOut ? <button className='btn btn-xs no-animation'>Sold out</button> :
+                                                       <button className='btn btn-primary btn-xs no-animation' >Available</button> 
                                                   }
 
                                              </td>
                                              <td>
                                                   {
-                                                       product.ads ? <button className='btn btn-xs'>Running</button> :
+                                                       product.ads ? <button className='btn btn-xs no-animation'>Running</button> :
                                                        <button onClick={() => handleAdds(product)} className='btn btn-success btn-xs'>Turn On</button>
                                                   }
                                              </td>
