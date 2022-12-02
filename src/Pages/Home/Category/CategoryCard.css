@@ -35,7 +35,6 @@
      left: 0;
      right: 0;
      z-index: -1;
-   
      margin: 0 auto;
      transform: scale(0.8);
      filter: blur(calc(var(--category-card-height) / 6));

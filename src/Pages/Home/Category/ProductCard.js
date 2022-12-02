@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -6,10 +7,11 @@ import { AuthContext } from '../../../AuthProvider/Auth';
 import useAdmin from '../../../Hooks/useAdmin';
 import BookingModal from './BookingModal';
 
-const ProductCard = ({ product, modalNumber }) => {
+const ProductCard = ({ product,modalNumber }) => {
   const MySwal = withReactContent(Swal);
   const { user } = useContext(AuthContext);
   const [type] = useAdmin(user?.email)
+  const [products,setProducts]= useState()
   const { name, logo, location, resale_rice, description, original_price, used, posted, seller_name, _id, verify, reported } = product;
 
   const handleReport = id => {
@@ -51,7 +53,7 @@ const ProductCard = ({ product, modalNumber }) => {
           <img className="absolute inset-0 h-full w-full" src={logo} alt="" />
         </div>
         <div className="p-4">
-          <h2 className="mt-2 mb-2 text-xl  font-bold">{name}</h2>
+          <h2 className="mt-2 mb-2 text-lg  font-bold">{name}</h2>
           <p className="text-sm">{description.slice(0, 100)}...</p>
           <div className=" flex items-center">
             <span className="text-lg font-semibold">Price:</span><span className="font-bold ml-2 text-xl">${resale_rice}</span>
@@ -67,7 +69,7 @@ const ProductCard = ({ product, modalNumber }) => {
         </div>
         <div className='border-b flex p-3 justify-evenly'>
 
-          <label htmlFor={`modal-${modalNumber}`} className='btn btn-xs'>
+          <label onClick={() => setProducts(product)} htmlFor={`modal-${modalNumber}`} className='btn btn-xs'>
             Book Now
           </label>
 
@@ -84,7 +86,12 @@ const ProductCard = ({ product, modalNumber }) => {
           <span className="ml-2">Posted: {posted}</span></div>
       </div>
 
-      <BookingModal product={product} modalId={modalNumber}></BookingModal>
+     {
+      products &&
+     
+
+      <BookingModal product={product} setProducts={setProducts} modalId={modalNumber}></BookingModal>
+     }
     </div>
 
 

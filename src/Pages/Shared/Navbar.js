@@ -18,9 +18,14 @@ const Navbar = () => {
      const menuItem = <>
           <li><Link to="/home">Home</Link></li>
           <li><Link to="/blog">Blog</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
-          <li><Link to="/login">Log in</Link></li>
           <li><Link to="/dashboard">Dashboard</Link></li>
+          {
+               user?.uid ? <> <li><Link onClick={handleLogOut} to="/signup">Log Out</Link></li></> :
+                    <>
+                         <li><Link to="/signup">Sign Up</Link></li>
+                         <li><Link to="/login">Log in</Link></li></>
+
+          }
      </>
      return (
 
@@ -29,7 +34,7 @@ const Navbar = () => {
                <div className="navbar-start md:ml-10">
                     <div className="dropdown">
                          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                              <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current text-white"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current text-white"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                          </label>
                          <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52">
                               {menuItem}

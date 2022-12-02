@@ -6,7 +6,6 @@ import React from 'react';
 const AllSeller = () => {
 
      const MySwal = withReactContent(Swal);
-
      const { data: users = [], refetch } = useQuery({
           queryKey: ['users'],
           queryFn: async () => {
@@ -40,8 +39,6 @@ const AllSeller = () => {
 
      const handleVerify = (seller) => {
 
-          
-
           fetch(`https://restore-server.vercel.app/category?email=${seller.email}`, {
                method:'PUT',
           })
@@ -59,9 +56,7 @@ const AllSeller = () => {
 
                          refetch()
                     }
-
                })
-
      }
      return (
           <div>

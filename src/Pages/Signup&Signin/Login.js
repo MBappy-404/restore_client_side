@@ -31,9 +31,6 @@ const Login = () => {
           navigate(from, { replace: true });
      }
 
-     console.log(loginUserEmail);
-     console.log(token);
-
      const handleLogin = data => {
           setLoginError('')
 
@@ -66,7 +63,7 @@ const Login = () => {
                          type: 'Buyer'
                     }
 
-                    fetch('https://restore-server.vercel.app /users', {
+                    fetch('https://restore-server.vercel.app/users', {
                          method: 'PUT',
                          headers: {
                               'content-type': 'application/json',
@@ -116,7 +113,7 @@ const Login = () => {
                                         {/* email   */}
                                         <div className="flex -mx-3">
                                              <div className="w-full px-3 mb-5">
-                                                  <label for="" className="text-sm font-semibold px-1">Email</label>
+                                                  <label  className="text-sm font-semibold px-1">Email</label>
                                                   <div className="flex">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
                                                        <input type="email"
@@ -131,7 +128,7 @@ const Login = () => {
                                         {/* password  */}
                                         <div className="flex -mx-3">
                                              <div className="w-full px-3 mb-8">
-                                                  <label for="" className="text-sm font-semibold px-1">Password</label>
+                                                  <label  className="text-sm font-semibold px-1">Password</label>
                                                   <div className="flex mb-2">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
                                                        <input type="password"
@@ -161,7 +158,7 @@ const Login = () => {
 
                                                   <div className='flex justify-center'>
                                                          <img  onClick={googleSignIn}  src="https://freesvg.org/img/1534129544.png" alt="" className='w-8 cursor-pointer' /> 
-                                                  </div>W
+                                                  </div>
                                              </div>
                                         </div>
                                    </form>

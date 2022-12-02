@@ -5,8 +5,6 @@ import AdvertiseCard from './AdvertiseCard';
 
 const Advertise = () => {
 
-     const [products, setProducts] = useState(null)
-
      const { data: productsItem = [] } = useQuery({
           queryKey: ['productsItem'],
           queryFn: async () => {
@@ -24,21 +22,13 @@ const Advertise = () => {
                <div className='flex flex-wrap  justify-center container '>
                     
                     {
-                         productsItem.filter(products => { return products.ads === 'true' && !products.soldOut }).map( product => <AdvertiseCard
+                         productsItem.filter(products => { return products.ads === 'true' && !products.soldOut }).map( (product,i) => <AdvertiseCard
                          key={product._id}
                          product={product}
-                         setProducts={setProducts}
+                         modalNumber={i + 1}
                          ></AdvertiseCard>)
                     }
                </div>
-               {
-               products &&
-               <BookingModal
-               products={products}
-               setProducts={setProducts}
-               >
-               </BookingModal>
-              }
           </div>
 
 

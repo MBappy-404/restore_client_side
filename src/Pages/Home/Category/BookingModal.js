@@ -5,7 +5,8 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import useAdmin from '../../../Hooks/useAdmin';
 
-const BookingModal = ({ product,modalId }) => {
+const BookingModal = ({ product,modalId, setProducts }) => {
+     // console.log(products);
      const { name, resale_rice,logo,_id } = product;
      const MySwal = withReactContent(Swal);
      const { user } = useContext(AuthContext);
@@ -36,7 +37,7 @@ const BookingModal = ({ product,modalId }) => {
                location,
                product_id:_id
           }
-          console.log(orders);
+          // console.log(orders);
           // booked item store  database
           fetch('https://restore-server.vercel.app/orders',{
                method: 'POST',
@@ -55,7 +56,10 @@ const BookingModal = ({ product,modalId }) => {
                          icon: 'success',
                          text: 'Now you can see your order on Dashboard',
                          showConfirmButton: true,
+                         
                     });
+
+                    setProducts(null)
                }
           })
      }
@@ -81,7 +85,7 @@ const BookingModal = ({ product,modalId }) => {
                               <label>Meet Location</label>
                               <input type="text" name='meetLocation' placeholder="Enter Meeting Location" className="input input-bordered mb-3 input-md w-full" required />
                              {
-                              type === "Admin" && "Seller" ?  <p className=' no-animation text-white btn w-full font-semibold' >Only Buyers Can Book</p>:
+                               type === "Seller" && "Admin" ?  <p className=' no-animation text-white btn w-full font-semibold' >Book Only Available for buyers</p>:
                               <input type="submit" value='Submit' className="btn mb-3 input-md w-full " />
                               } 
                          </form>

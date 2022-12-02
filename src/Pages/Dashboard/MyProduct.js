@@ -2,9 +2,13 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/Auth';
+import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2'
+
 
 const MyProduct = () => {
      const { user } = useContext(AuthContext);
+     const MySwal = withReactContent(Swal);
 
      const url = `https://restore-server.vercel.app/myProducts?email=${user?.email}`
      const { data: products = [],refetch } = useQuery({
@@ -25,7 +29,13 @@ const MyProduct = () => {
           .then(data => {
                // console.log(data);
                if(data.acknowledged){
-                     
+
+                    MySwal.fire({
+                         title: 'Product Delete Success',
+                         icon: 'success',
+                         timer: 1500,
+                         showConfirmButton: false,
+                    });   
                }
                refetch()
           })
@@ -34,7 +44,7 @@ const MyProduct = () => {
 
      const handleAdds = (product) =>{
 
-          fetch(`https://restore-server.vercel.app /ads/${product._id}`,{
+          fetch(`https://restore-server.vercel.app/ads/${product._id}`,{
                method: 'PUT'
           })
           .then(res => res.json())

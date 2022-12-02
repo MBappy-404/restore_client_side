@@ -57,7 +57,7 @@ const Signup = () => {
                type: type
           };
 
-          fetch('https://restore-server.vercel.app /users', {
+          fetch('https://restore-server.vercel.app/users', {
                method: 'PUT',
                headers: {
                     'content-type': 'application/json'
@@ -66,10 +66,10 @@ const Signup = () => {
           })
                .then(res => res.json())
                .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     setCreatedUserEmail(email)
                     MySwal.fire({
-                         title: 'Sign Success',
+                         title: 'Sign Up Success',
                          timer: 1500,
                          showConfirmButton: false,
                          icon: 'success',
@@ -99,7 +99,7 @@ const Signup = () => {
                                         {/* name  */}
                                         <div className="flex -mx-3">
                                              <div className="w-full px-3 mb-5">
-                                                  <label for="" className="text-sm font-semibold px-1">First name</label>
+                                                  <label  className="text-sm font-semibold px-1">First name</label>
                                                   <div className="flex">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
                                                        <input type="text"
@@ -114,7 +114,7 @@ const Signup = () => {
                                         {/* select  */}
                                         <div className="flex -mx-3">
                                              <div className="w-full px-3 mb-5">
-                                                  <label for="" className="text-sm font-semibold px-1">Select Your Type</label>
+                                                  <label  className="text-sm font-semibold px-1">Select Your Type</label>
                                                   <div className="flex">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
                                                        <select
@@ -133,7 +133,7 @@ const Signup = () => {
                                         {/* email  */}
                                         <div className="flex -mx-3">
                                              <div className="w-full px-3 mb-5">
-                                                  <label for="" className="text-sm font-semibold px-1">Email</label>
+                                                  <label  className="text-sm font-semibold px-1">Email</label>
                                                   <div className="flex">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
                                                        <input type="email"
@@ -148,7 +148,7 @@ const Signup = () => {
                                         {/* password  */}
                                         <div className="flex -mx-3">
                                              <div className="w-full px-3 mb-8">
-                                                  <label for="" className="text-sm font-semibold px-1">Password</label>
+                                                  <label  className="text-sm font-semibold px-1">Password</label>
                                                   <div className="flex mb-2">
                                                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
                                                        <input type="password"

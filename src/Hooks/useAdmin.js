@@ -8,7 +8,6 @@ const useAdmin = email => {
             fetch(`https://restore-server.vercel.app/users/verify?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     setType(data.type);
                     setTypeLoading(false);
                 })
