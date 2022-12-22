@@ -16,6 +16,7 @@ import Dashboard from '../Pages/Dashboard/Dashboard'
 import PrivateRoute from "./PrivateRoute";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import Errorpage from "../Pages/Errorpage/Errorpage";
+import Contact from "../Pages/Contact/Contact";
 
  
 
@@ -44,6 +45,10 @@ import Errorpage from "../Pages/Errorpage/Errorpage";
                     {
                          path: '/login',
                          element: <Login></Login>
+                    },
+                    {
+                         path: '/contact',
+                         element: <Contact></Contact>
                     },
                     {
                          path:'/category/:name',

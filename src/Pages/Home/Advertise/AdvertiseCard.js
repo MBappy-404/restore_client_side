@@ -14,9 +14,9 @@ const AdvertiseCard = ({ product,   modalNumber }) => {
 
      return (
  
-          <div className="w-96 sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
+          <div data-aos="zoom-out-down" className="w-96 sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
                
-               <div href=" " className="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
+               <div href=" " className="c-card block bg-white border shadow-md hover:shadow-2xl rounded-lg overflow-hidden">
                     <div className="relative pb-48 overflow-hidden">
                          <img className="absolute inset-0 h-full w-full object-cover" src={logo} alt="" />
                     </div>
@@ -39,7 +39,7 @@ const AdvertiseCard = ({ product,   modalNumber }) => {
                     <div className='border-b flex p-3 justify-center'>
 
                          {
-                              user?.uid ? <label onClick={()=>setProducts(product)} htmlFor={`modal-${modalNumber}`} className='btn btn-sm btn-primary'>Book Now</label>
+                              user?.uid ? <label onClick={()=>setProducts(product)} htmlFor={`modal-${modalNumber}`} className='btn btn-sm w-full lg:w-48 btn-primary'>Book Now</label>
                                    :
                                    <button className='btn btn-sm'> <Link to='/login'>Please login & book</Link> </button>
                          }

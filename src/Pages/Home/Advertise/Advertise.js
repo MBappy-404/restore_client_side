@@ -17,7 +17,7 @@ const Advertise = () => {
      return (
 
           <div className='container m-auto my-16'>
-                <h1 className='text-3xl font-bold text-indigo-500 text-center mt-5 mb-5'>Trending Laptops</h1>
+                <h1 className='text-2xl  md:text-4xl font-bold text-indigo-500 text-center mt-5 mb-5'>Suggest For You</h1>
 
                <div className='flex flex-wrap  justify-center container '>
                     

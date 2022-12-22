@@ -48,7 +48,7 @@ const ProductCard = ({ product,modalNumber }) => {
   return (
 
     <div className="w-96 sm:w-1/2 md:w-1/2 xl:w-1/4 p-4  ">
-      <div href=" " className="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
+      <div href=" " className="c-card block bg-white shadow-md hover:shadow-2xl border rounded-lg overflow-hidden">
         <div className="relative pb-48 overflow-hidden">
           <img className="absolute inset-0 h-full w-full" src={logo} alt="" />
         </div>
