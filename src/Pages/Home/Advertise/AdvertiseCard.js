@@ -14,7 +14,7 @@ const AdvertiseCard = ({ product,   modalNumber }) => {
 
      return (
  
-          <div data-aos="zoom-out-down" className="w-96 sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
+          <div  className="w-96  mb-20 sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
                
                <div href=" " className="c-card block bg-white border shadow-md hover:shadow-2xl rounded-lg overflow-hidden">
                     <div className="relative pb-48 overflow-hidden">

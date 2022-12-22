@@ -16,13 +16,14 @@ const Advertise = () => {
      })
      return (
 
-          <div className='container m-auto my-16'>
-                <h1 className='text-2xl  md:text-4xl font-bold text-indigo-500 text-center mt-5 mb-5'>Suggest For You</h1>
+        <div className='bg-gray-200 p-0'>
+            <div className='container m-auto '>
+                <h1 className='text-2xl  md:text-4xl font-bold text-indigo-500 text-center py-8 md:py-16'>Suggest For You</h1>
 
-               <div className='flex flex-wrap  justify-center container '>
+               <div  className='flex flex-wrap  justify-center container '>
                     
                     {
-                         productsItem.filter(products => { return products.ads === 'true' && !products.soldOut }).map( (product,i) => <AdvertiseCard
+                         productsItem.filter(products => { return products.ads === 'true' && !products.soldOut }).map( (product,i) => <AdvertiseCard 
                          key={product._id}
                          product={product}
                          modalNumber={i + 1}
@@ -31,6 +32,7 @@ const Advertise = () => {
                </div>
           </div>
 
+        </div>
 
      );
 };

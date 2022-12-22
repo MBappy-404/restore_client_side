@@ -7,7 +7,7 @@ const Blog = () => {
                <div className="flex flex-col m-3 ">
 
                     {/* QUESTION NO 1 */}
-                    <div  data-aos="zoom-out-up" className="grid card bg-slate-700 text-white shadow-2xl rounded-box p-10">
+                    <div  data-aos="zoom-in-up" className="grid card bg-slate-700 text-white shadow-2xl rounded-box p-10">
                          <h2 className='text-2xl text-white font-semibold'>1.What are the different ways to manage a state in a React application?</h2> <br />
                          <p className='text-medium'>
                               <strong>Local (UI) state –</strong> Local state is data we manage in one or another component.Local state is most often managed in React using the useState hook.For example, local state would be needed to show or hide a modal component or to track values for a form component, such as form submission, when the form is disabled and the values of a form’s inputs. <br />  <br />
@@ -25,13 +25,13 @@ const Blog = () => {
                     </div>
                     <div className="divider"></div>
                     {/* QUESTION NO 2 */}
-                    <div  data-aos="zoom-out-up" className="grid card bg-slate-700 text-white shadow-2xl rounded-box p-10">
+                    <div  data-aos="zoom-in-up" className="grid card bg-slate-700 text-white shadow-2xl rounded-box p-10">
                          <h2 className='text-2xl text-white'>2. How does prototypical inheritance work?</h2> <br />
                          <p className='text-medium'>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object. getPrototypeOf and Object.</p>
                     </div>
                     <div className="divider"></div>
                     {/* QUESTION NO 3 */}
-                    <div  data-aos="zoom-out-up" className="grid card bg-slate-700 text-white shadow-2xl rounded-box p-10">
+                    <div  data-aos="zoom-in-up" className="grid card bg-slate-700 text-white shadow-2xl rounded-box p-10">
                          <h2 className='text-2xl text-white'>3. What is a unit test? Why should we write unit tests?</h2> <br />
                          <p className='text-medium'>
                               <strong>What is Unit Testing?</strong> <br />
@@ -48,7 +48,7 @@ const Blog = () => {
                     </div>
                     <div className="divider"></div>
                     {/* QUESTION NO 4 */}
-                    <div  data-aos="zoom-out-up" className="grid card bg-slate-700 text-white shadow-2xl rounded-box p-10">
+                    <div  data-aos="zoom-in-up" className="grid card bg-slate-700 text-white shadow-2xl rounded-box p-10">
                          <h2 className='text-2xl text-white'>4. React vs. Angular vs. Vue?</h2> <br />
                          <p className='text-medium'>
                               <strong>Angular -</strong> developed by Google, was first released in 2010, making it the oldest of the lot. It is a TypeScript-based JavaScript framework. A substantial shift occurred in 2016 on the release of Angular 2 (and the dropping of the “JS” from the original name – AngularJS). Angular 2+ is known as just Angular. Although AngularJS (version 1) still gets updates, we will focus the discussion on Angular. <br />

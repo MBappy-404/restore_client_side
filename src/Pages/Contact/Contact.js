@@ -4,8 +4,8 @@ import Location from './Location';
 const Contact = () => {
      return (
   
-               
-<div className="container my-10 px-6 mx-auto">
+  <div className=' bg-gray-200'>
+   <div className=" mx-auto">
      <h1 className='text-2xl md:text-4xl text-center text-indigo-500 font-semibold mb-10'>Contact Us</h1>
   <section className="mb-20 text-gray-800">
     <div className="relative overflow-hidden bg-no-repeat bg-cover"
@@ -14,7 +14,7 @@ const Contact = () => {
     <div  className="container text-gray-800 px-4 md:px-12">
       <div className="block rounded-lg shadow-lg py-10 md:py-12 px-2 md:px-6"
         style={{marginTop: '-100px', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)'}}>
-        <div className="flex flex-wrap">
+        <div className="flex  flex-wrap">
           <div className="grow-0 shrink-0 basis-auto w-full xl:w-5/12 px-3 lg:px-6 mb-12 xl:mb-0">
             <form  data-aos="fade-up">
               <div className="form-group mb-6">
@@ -90,7 +90,7 @@ const Contact = () => {
               ease-in-out">Send</button>
             </form>
           </div>
-          <div   data-aos="zoom-out-up" className="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
+          <div   data-aos="fade-up" className="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
             <div className="flex flex-wrap">
               <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                 <div className="flex items-start">
@@ -110,7 +110,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              <div   data-aos="zoom-out-up" className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+              <div   data-aos="fade-up" className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                 <div className="flex items-start">
                   <div className="shrink-0">
                     <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -128,7 +128,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              <div   data-aos="zoom-out-up" className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+              <div   data-aos="fade-up" className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                 <div className="flex align-start">
                   <div className="shrink-0">
                     <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -146,7 +146,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              <div   data-aos="zoom-out-up" className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+              <div   data-aos="fade-up" className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                 <div className="flex align-start">
                   <div className="shrink-0">
                     <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -164,7 +164,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              <div   data-aos="zoom-out-up" className=" mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+              <div   data-aos="fade-up" className=" mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                 <div className="flex align-start">
                   <div className="shrink-0">
                     <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -181,7 +181,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              <div   data-aos="zoom-out-up" className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+              <div   data-aos="fade-up" className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                 <div className="flex align-start">
                   <div className="shrink-0">
                     <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -210,8 +210,8 @@ const Contact = () => {
   </section>
   
 
+  </div>
 </div>
-
           
      );
 };
